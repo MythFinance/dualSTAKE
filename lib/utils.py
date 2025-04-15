@@ -1,10 +1,10 @@
 from pyteal import (
     App,
     AssetHolding,
-    Btoi,
     Bytes,
     Concat,
     Extract,
+    ExtractUint32,
     Err,
     Global,
     If,
@@ -21,6 +21,7 @@ from pyteal import (
     TxnField,
     TxnType,
 )
+from lib.storage import gget
 from lib.str import bytes_numbers, str_contract_upgrade, str_lst_id
 
 
@@ -190,4 +191,4 @@ def latest_timestamp_plus_uint32(offset):
 
 
 def get_upgrade_maturity_ts():
-    return Btoi(Extract(str_contract_upgrade, Int(0), Int(4)))
+    return ExtractUint32(gget(str_contract_upgrade), Int(0))

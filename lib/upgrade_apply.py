@@ -1,5 +1,4 @@
 from pyteal import (
-    Btoi,
     Extract,
     For,
     Global,
