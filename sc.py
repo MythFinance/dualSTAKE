@@ -38,7 +38,13 @@ from lib.rate import (
     swap,
 )
 from lib.storage import gget, global_incr
-from lib.str import str_asa_id, str_lst_id, str_max_balance, str_rate_precision, str_staked
+from lib.str import (
+    str_asa_id,
+    str_lst_id,
+    str_max_balance,
+    str_rate_precision,
+    str_staked,
+)
 from lib.utils import custom_assert, send_asa
 from lib.validate import (
     validate_algo_payment_after,
@@ -51,6 +57,8 @@ from redeem_protest import (
     internal_redeem,
     protest_stake,
     unprotest_stake,
+    is_user_protesting,
+    get_user_protesting_stake,
 )
 from router import router
 from upgrade import queue_upgrade, reset_upgrade
@@ -137,7 +145,7 @@ def mint():
         ),
         emit_event(
             "asa_balance(uint64)",  # arc28: asa_balance
-            Itob(get_asset_balance(gget(str_asa_id))+asa_amount_received.load()),
+            Itob(get_asset_balance(gget(str_asa_id)) + asa_amount_received.load()),
         ),
         global_incr(str_staked, amount.load()),
         send_asa(Txn.sender(), gget(str_lst_id), amount.load(), Int(0)),
@@ -199,6 +207,8 @@ class ContractListing(abi.NamedTuple):
     incentive_eligible: abi.Field[abi.Bool]
     is_online: abi.Field[abi.Bool]
 
+    user_protesting_stake: abi.Field[abi.Uint64]
+
 
 @router.method
 @ready
@@ -218,6 +228,7 @@ def get_contract_listing(*, output: ContractListing):
         need_swap
         incentive_eligible
         is_online
+        user_protesting_stake
     will swap and apply fee updates if needed
     """
     rate = abi.Uint64()
@@ -250,6 +261,8 @@ def get_contract_listing(*, output: ContractListing):
     voter_param_eligible = VoterParamObject(
         Global.current_application_address()
     ).incentive_eligible()
+
+    user_protesting_stake = abi.Uint64()
     return Seq(
         lst_asset_param_name,
         asa_asset_param_name,
@@ -270,6 +283,11 @@ def get_contract_listing(*, output: ContractListing):
         rate.set(_get_rate()),
         ie.set(acct_param_eligible.value()),
         is_online.set(voter_param_eligible.hasValue()),
+        user_protesting_stake.set(
+            If(is_user_protesting(Txn.sender()))
+            .Then(get_user_protesting_stake(Txn.sender()))
+            .Else(Int(0))
+        ),
         output.set(
             rate,
             algo_balance,
@@ -284,6 +302,7 @@ def get_contract_listing(*, output: ContractListing):
             will_swap,
             ie,
             is_online,
+            user_protesting_stake,
         ),
     )
 
@@ -292,6 +311,7 @@ class StateResult(abi.NamedTuple):
     rate: abi.Field[abi.Uint64]
     algo_balance: abi.Field[abi.Uint64]
     asa_balance: abi.Field[abi.Uint64]
+
 
 @router.method
 @ready
