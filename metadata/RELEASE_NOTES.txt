@@ -1,1 +1,2 @@
-Added "user protesting amount" in the contract state structure returned by the smart contracts
+Added dummy public method to demo upgrade and test protest
+This upgrade will be applied only to the coopALGO contract on FNet, in order to test dissolving protesting stake with ARC-59 delivery.

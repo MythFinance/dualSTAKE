@@ -85,6 +85,14 @@ keyreg_online
 
 @router.method
 @ready
+def dummy_method():
+    """
+    Dummy public method to demo upgrade and test protest. Will not be applied.
+    """
+    return Seq()
+
+@router.method
+@ready
 def mint():
     """
     Public method. Mint dualSTAKE lst
