@@ -1,2 +1,3 @@
 During initial configuration: confirm Tinyman pool's asset parameters
 During initial configuration: confirm integrity of ARC 59 approval program
+Contract listing state: added upgrading status

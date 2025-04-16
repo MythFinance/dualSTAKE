@@ -39,7 +39,9 @@ from lib.rate import (
 )
 from lib.storage import gget, global_incr
 from lib.str import (
+    bytes_empty,
     str_asa_id,
+    str_contract_upgrade,
     str_lst_id,
     str_max_balance,
     str_rate_precision,
@@ -206,6 +208,7 @@ class ContractListing(abi.NamedTuple):
     need_swap: abi.Field[abi.Bool]
     incentive_eligible: abi.Field[abi.Bool]
     is_online: abi.Field[abi.Bool]
+    upgrading: abi.Field[abi.Bool]
 
     user_protesting_stake: abi.Field[abi.Uint64]
 
@@ -262,6 +265,7 @@ def get_contract_listing(*, output: ContractListing):
         Global.current_application_address()
     ).incentive_eligible()
 
+    upgrading = abi.Bool()
     user_protesting_stake = abi.Uint64()
     return Seq(
         lst_asset_param_name,
@@ -283,6 +287,7 @@ def get_contract_listing(*, output: ContractListing):
         rate.set(_get_rate()),
         ie.set(acct_param_eligible.value()),
         is_online.set(voter_param_eligible.hasValue()),
+        upgrading.set(gget(str_contract_upgrade) != bytes_empty),
         user_protesting_stake.set(
             If(is_user_protesting(Txn.sender()))
             .Then(get_user_protesting_stake(Txn.sender()))
@@ -302,6 +307,7 @@ def get_contract_listing(*, output: ContractListing):
             will_swap,
             ie,
             is_online,
+            upgrading,
             user_protesting_stake,
         ),
     )
