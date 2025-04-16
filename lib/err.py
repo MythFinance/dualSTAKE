@@ -52,3 +52,5 @@ err_chadm_not_called_by_new_admin = "ERR NA" # Changing admin: call 2 failed nex
 
 err_noderunner_fees_not_zero = "ERR FEE" # Changing noderunner but previous noderunner has fees to be paid out
 err_configured = "ERR CFGD" # Configure called but the contract is configured already
+err_tm2_pool = "ERR TM2" # Tinyman pool provided did not match asset ID
+err_arc59_hash = "ERR ARC59" # arc59 approval hash did not validate

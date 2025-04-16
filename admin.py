@@ -1,4 +1,6 @@
 from pyteal import (
+    And,
+    App,
     AppParamObject,
     Bytes,
     Concat,
@@ -16,6 +18,7 @@ from pyteal import (
     Pop,
     ScratchVar,
     Seq,
+    Sha512_256,
     TealType,
     Txn,
     TxnField,
@@ -38,6 +41,8 @@ from lib.err import (
     err_chadm_app_arg,
     err_chadm_oc,
     err_chadm_not_called_by_new_admin,
+    err_tm2_pool,
+    err_arc59_hash,
 )
 from lib.rate import pre_mint_or_redeem
 from lib.storage import gget, gset
@@ -88,6 +93,9 @@ def configure(
     """
     Admin or fee admin method. Bootstrap; configure global storage except LST ID.
     """
+    arc59 = AppParamObject(arc59_app_id.get()).approval_program()
+    asset1_id = App.localGetEx(lp_id.get(), tm2_app_id.get(), Bytes("asset_1_id"))
+    asset2_id = App.localGetEx(lp_id.get(), tm2_app_id.get(), Bytes("asset_2_id"))
     return Seq(
         custom_assert(gget(str_lst_id) == Int(0), err_configured),
         gset(str_asa_id, asa_id.get()),
@@ -115,6 +123,22 @@ def configure(
                 Global.min_txn_fee(),
             ),
         ),
+        # validate tm2 pool params
+        If(lp_type.get() == Bytes("tm2")).Then(
+            asset1_id,
+            asset2_id,
+            custom_assert(Or(
+                # This should be basically always afaik
+                And(asset1_id.value() == asa_id.get(), asset2_id.value() == Int(0)),
+                # But lets support this as well just in case
+                And(asset2_id.value() == asa_id.get(), asset1_id.value() == Int(0)),
+            ), err_tm2_pool)
+        ),
+        # validate ARC59 program hash
+        arc59,
+        custom_assert(
+            Sha512_256(arc59.value()) == Bytes("base16", "e650b2ed3f254b7c8b71a8bd7550fb783911edeefd451fe46c369eb429fef0a7")
+        , err_arc59_hash),
     )
 
 @router.method
