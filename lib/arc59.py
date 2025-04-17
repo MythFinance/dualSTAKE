@@ -49,7 +49,6 @@ def arc59_send_asa_and_algo(receiver, algo_amount, asa_id, asa_amount):
     receiver_inbox_address = abi.Address()
     amount = ScratchVar(TealType.uint64)
     return Seq(
-        amount.store(Int(1)),
         # store initial balance, convert into a diff after done
         algo_diff.store(Balance(Global.current_application_address())),
 
@@ -105,7 +104,7 @@ def arc59_send_asa_and_algo(receiver, algo_amount, asa_id, asa_amount):
                     TxnField.type_enum: TxnType.AssetTransfer,
                     TxnField.asset_receiver: arc59Address.value(),
                     TxnField.xfer_asset: asa_id,
-                    TxnField.asset_amount: amount.load(),
+                    TxnField.asset_amount: asa_amount,
                     TxnField.fee: Global.min_txn_fee(),
                 },
                 receiver,

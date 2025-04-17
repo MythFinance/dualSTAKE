@@ -1,1 +1,1 @@
-Contract listing state: support user as argument for batch registry lookups
+ARC59 support: amount bugfix
