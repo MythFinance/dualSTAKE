@@ -215,7 +215,7 @@ class ContractListing(abi.NamedTuple):
 
 @router.method
 @ready
-def get_contract_listing(*, output: ContractListing):
+def get_contract_listing(user: abi.Address, *, output: ContractListing):
     """
     Public method. Returns ABI struct ContractListing:
         rate (see get_rate)
@@ -289,8 +289,8 @@ def get_contract_listing(*, output: ContractListing):
         is_online.set(voter_param_eligible.hasValue()),
         upgrading.set(gget(str_contract_upgrade) != bytes_empty),
         user_protesting_stake.set(
-            If(is_user_protesting(Txn.sender()))
-            .Then(get_user_protesting_stake(Txn.sender()))
+            If(is_user_protesting(user.get()))
+            .Then(get_user_protesting_stake(user.get()))
             .Else(Int(0))
         ),
         output.set(
