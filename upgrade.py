@@ -19,7 +19,7 @@ from router import router
 #
 # The global state contract_upgrade field will include a number of hashes that mush correspond to the future approval program pages
 #
-# A timelock of (probably) 2 weeks must also be satisfied
+# A timelock of 1 week must also be satisfied
 #
 # The code handling application updates verify that the SHA512_256 hash of each program page is equal to the stored hashes
 #
@@ -36,7 +36,7 @@ from router import router
 def queue_upgrade(hashes: abi.DynamicBytes):
     """
     admin method only.
-    stage a contract upgrade. time applicability 2 weeks from current timestamp. hashes are variable length, 32b each, corresponding to SHA512_256 of approval program pages
+    stage a contract upgrade. time applicability 1 week from current timestamp. hashes are variable length, 32b each, corresponding to SHA512_256 of approval program pages
     """
     return Seq(
         custom_assert(Mod(Len(hashes.get()), Int(32)) == Int(0), err_hash_len),

@@ -179,7 +179,7 @@ def redeem():
 def get_rate(*, output: abi.Uint64):
     """
     Public method. Returns the current rate as ABI uint64:
-        1e8 * (ASA Balance) / (global staked)
+        (rate_precision global var, default 1e10) * (ASA Balance) / (global staked)
     Returns zero if staked == 0
     will swap and apply fee updates if needed
     """
