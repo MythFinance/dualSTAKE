@@ -1,6 +1,7 @@
 from pyteal import (
     App,
     AssetHolding,
+    AssetParam,
     Bytes,
     Concat,
     Extract,
@@ -188,6 +189,11 @@ def get_asset_balance(aid):
 
 def latest_timestamp_plus_uint32(offset):
     return Extract(Itob(Global.latest_timestamp() + offset), Int(4), Int(4))
+
+
+def get_asset_total_supply(aid):
+    ab = AssetParam.total(aid)
+    return Seq(ab, ab.value())
 
 
 def get_upgrade_maturity_ts():

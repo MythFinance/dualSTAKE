@@ -121,7 +121,7 @@ def mint():
                 WideRatio(
                     [amount.load(), rate.load()],
                     [gget(str_rate_precision)],
-                )
+                ) + Int(1)
             ),
             # WARNING Intentionally using after-positioning for the asa payment
             # Currently nothing else expects an ASA payments at (previous position)

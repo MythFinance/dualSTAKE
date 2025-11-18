@@ -43,6 +43,7 @@ from lib.err import (
     err_chadm_not_called_by_new_admin,
     err_tm2_pool,
     err_arc59_hash,
+    err_zero
 )
 from lib.rate import pre_mint_or_redeem
 from lib.storage import gget, gset
@@ -62,11 +63,13 @@ from lib.str import (
     str_noderunner_fee_bps,
     str_noderunner_fees,
     str_platform_fee_bps,
+    str_protest_sum,
     str_rate_precision,
+    str_staked,
     str_tm2_app_id,
     str_upgrade_period,
 )
-from lib.utils import create_lst_asset, custom_assert, send_asa
+from lib.utils import create_lst_asset, custom_assert, send_asa, get_asset_balance, get_asset_total_supply
 from router import router
 
 
@@ -239,6 +242,28 @@ def update_max_balance(new_max_balance: abi.Uint64):
     return Seq(
         custom_assert(new_max_balance.get() <= Int(65432100000000), err_max_stake_exceeded), # 65M ALGO max
         gset(str_max_balance, new_max_balance.get()),
+    )
+
+
+@router.method
+@fee_admin_only
+def withdraw_ds_surplus():
+    """
+    Fee admin method. Withdraws any dualSTAKE surplus, which would result if tokens are accidentally sent to the escrow account.
+    Expected dualSTAKE *circulation* at any time should be exactly (staked amount) - (total protesting amount)
+    Expected dualSTAKE balance is (Total Supply, 10B) - (circulating)
+    """
+    expected_balance = ScratchVar(TealType.uint64)
+    actual_balance = ScratchVar(TealType.uint64)
+    return Seq(
+        expected_balance.store(
+            get_asset_total_supply(gget(str_lst_id)) - gget(str_staked) + gget(str_protest_sum)
+        ),
+        actual_balance.store(get_asset_balance(gget(str_lst_id))),
+        # ensure there is surplus to send
+        custom_assert(actual_balance.load() > expected_balance.load(), err_zero),
+        # send surplus to caller (fee admin). caller pays inner txn fees
+        send_asa(Txn.sender(), gget(str_lst_id), actual_balance.load() - expected_balance.load(), Int(0)),
     )
 
 
