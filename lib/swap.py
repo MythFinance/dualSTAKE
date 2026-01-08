@@ -82,15 +82,20 @@ def get_price(tm_account, amount):
     asset2_reserves = App.localGetEx(
         tm_account, gget(str_tm2_app_id), Bytes("asset_2_reserves")
     )
+    total_fee_bps = App.localGetEx(
+        tm_account, gget(str_tm2_app_id), Bytes("total_fee_share")
+    )
     return Seq(
         asset1_id,
         asset1_reserves,
         asset2_reserves,
+        total_fee_bps,
         custom_assert(
             And(
                 asset1_id.hasValue(),
                 asset2_reserves.hasValue(),
                 asset1_reserves.hasValue(),
+                total_fee_bps.hasValue(),
             ),
             err_lp,
         ),
@@ -100,7 +105,7 @@ def get_price(tm_account, amount):
             - Int(1)
             - WideRatio(
                 [asset1_reserves.value(), asset2_reserves.value()],
-                [asset1_reserves.value() + get_tm2_net_amt(amount)],
+                [asset1_reserves.value() + get_tm2_net_amt(amount, total_fee_bps.value())],
             )
         )
         .Else(
@@ -108,11 +113,11 @@ def get_price(tm_account, amount):
             - Int(1)
             - WideRatio(
                 [asset2_reserves.value(), asset1_reserves.value()],
-                [asset2_reserves.value() + get_tm2_net_amt(amount)],
+                [asset2_reserves.value() + get_tm2_net_amt(amount, total_fee_bps.value())],
             )
         ),
     )
 
 
-def get_tm2_net_amt(amt):
-    return amt - (Int(30) * amt / Int(10000))
+def get_tm2_net_amt(amt, total_fee_bps):
+    return amt - (total_fee_bps * amt / Int(10000))

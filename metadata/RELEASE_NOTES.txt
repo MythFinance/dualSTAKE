@@ -1,2 +1,1 @@
-+1 microunit in mint rate
-withdraw_ds_surplus utility to withdraw funds accidentally sent to the contract
+un-hardcode tinyman fee bps, reading from remote state
