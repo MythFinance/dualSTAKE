@@ -1,0 +1,3714 @@
+#pragma version 11
+txn NumAppArgs
+int 0
+==
+bnz main_l60
+txna ApplicationArgs 0
+method "queue_update_fees(uint64,uint64)uint64"
+==
+bnz main_l59
+txna ApplicationArgs 0
+method "reset_update_fees()void"
+==
+bnz main_l58
+txna ApplicationArgs 0
+method "configure(uint64,byte[],byte[],uint64,uint64,address,address,address,bool,uint64,uint64,uint64,uint64,uint64,uint64,uint64)void"
+==
+bnz main_l57
+txna ApplicationArgs 0
+method "configure2(byte[],byte[],byte[])void"
+==
+bnz main_l56
+txna ApplicationArgs 0
+method "change_admin_1(address)void"
+==
+bnz main_l55
+txna ApplicationArgs 0
+method "change_admin_2()void"
+==
+bnz main_l54
+txna ApplicationArgs 0
+method "change_noderunner(address)void"
+==
+bnz main_l53
+txna ApplicationArgs 0
+method "change_feeaddr(address)void"
+==
+bnz main_l52
+txna ApplicationArgs 0
+method "update_max_balance(uint64)void"
+==
+bnz main_l51
+txna ApplicationArgs 0
+method "withdraw_ds_surplus()void"
+==
+bnz main_l50
+txna ApplicationArgs 0
+method "verify_nfdomains(uint64,uint64,byte[])void"
+==
+bnz main_l49
+txna ApplicationArgs 0
+method "withdraw_node_runner_fees(uint64)void"
+==
+bnz main_l48
+txna ApplicationArgs 0
+method "withdraw_platform_fees(uint64)void"
+==
+bnz main_l47
+txna ApplicationArgs 0
+method "keyreg_online(byte[],byte[],byte[],uint64,uint64,uint64,uint64)void"
+==
+bnz main_l46
+txna ApplicationArgs 0
+method "keyreg_offline()void"
+==
+bnz main_l45
+txna ApplicationArgs 0
+method "protest_stake()void"
+==
+bnz main_l44
+txna ApplicationArgs 0
+method "unprotest_stake()void"
+==
+bnz main_l43
+txna ApplicationArgs 0
+method "admin_unprotest_stake(address)void"
+==
+bnz main_l42
+txna ApplicationArgs 0
+method "dissolve_protesting_stake(address)void"
+==
+bnz main_l41
+txna ApplicationArgs 0
+method "queue_upgrade(byte[])void"
+==
+bnz main_l40
+txna ApplicationArgs 0
+method "reset_upgrade()void"
+==
+bnz main_l39
+txna ApplicationArgs 0
+method "mint()void"
+==
+bnz main_l38
+txna ApplicationArgs 0
+method "redeem()void"
+==
+bnz main_l37
+txna ApplicationArgs 0
+method "get_rate()uint64"
+==
+bnz main_l36
+txna ApplicationArgs 0
+method "get_contract_listing(address)(uint64,uint64,uint64,uint64,uint64,string,uint64,string,string,uint16,bool,bool,bool,bool,uint64)"
+==
+bnz main_l35
+txna ApplicationArgs 0
+method "get_rate_and_balances()(uint64,uint64,uint64)"
+==
+bnz main_l34
+txna ApplicationArgs 0
+method "get_need_swap()bool"
+==
+bnz main_l33
+txna ApplicationArgs 0
+method "swap_or_fail()void"
+==
+bnz main_l32
+txna ApplicationArgs 0
+method "nullun()void"
+==
+bnz main_l31
+err
+main_l31:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub nulluncaster_81
+int 1
+return
+main_l32:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub swaporfailcaster_80
+int 1
+return
+main_l33:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub getneedswapcaster_79
+int 1
+return
+main_l34:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub getrateandbalancescaster_78
+int 1
+return
+main_l35:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub getcontractlistingcaster_77
+int 1
+return
+main_l36:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub getratecaster_76
+int 1
+return
+main_l37:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub redeemcaster_75
+int 1
+return
+main_l38:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub mintcaster_74
+int 1
+return
+main_l39:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub resetupgradecaster_73
+int 1
+return
+main_l40:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub queueupgradecaster_72
+int 1
+return
+main_l41:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub dissolveprotestingstakecaster_71
+int 1
+return
+main_l42:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub adminunproteststakecaster_70
+int 1
+return
+main_l43:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub unproteststakecaster_69
+int 1
+return
+main_l44:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub proteststakecaster_68
+int 1
+return
+main_l45:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub keyregofflinecaster_67
+int 1
+return
+main_l46:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub keyregonlinecaster_66
+int 1
+return
+main_l47:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub withdrawplatformfeescaster_65
+int 1
+return
+main_l48:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub withdrawnoderunnerfeescaster_64
+int 1
+return
+main_l49:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub verifynfdomainscaster_63
+int 1
+return
+main_l50:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub withdrawdssurpluscaster_62
+int 1
+return
+main_l51:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub updatemaxbalancecaster_61
+int 1
+return
+main_l52:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub changefeeaddrcaster_60
+int 1
+return
+main_l53:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub changenoderunnercaster_59
+int 1
+return
+main_l54:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub changeadmin2caster_58
+int 1
+return
+main_l55:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub changeadmin1caster_57
+int 1
+return
+main_l56:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub configure2caster_56
+int 1
+return
+main_l57:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub configurecaster_55
+int 1
+return
+main_l58:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub resetupdatefeescaster_54
+int 1
+return
+main_l59:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub queueupdatefeescaster_53
+int 1
+return
+main_l60:
+txn OnCompletion
+int NoOp
+==
+bnz main_l89
+txn OnCompletion
+int OptIn
+==
+bnz main_l88
+txn OnCompletion
+int CloseOut
+==
+bnz main_l87
+txn OnCompletion
+int UpdateApplication
+==
+bnz main_l73
+txn OnCompletion
+int DeleteApplication
+==
+bnz main_l66
+err
+main_l66:
+txn ApplicationID
+int 0
+!=
+assert
+callsub assertadmin_4
+byte "staked"
+app_global_get
+int 0
+==
+!
+bnz main_l72
+byte "noderunner_fees"
+app_global_get
+int 0
+==
+!
+bnz main_l71
+itxn_begin
+int acfg
+itxn_field TypeEnum
+byte "lst_id"
+app_global_get
+itxn_field ConfigAsset
+itxn_submit
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 3
+store 2
+load 3
+bnz main_l70
+main_l69:
+itxn_begin
+int pay
+itxn_field TypeEnum
+int 0
+itxn_field Amount
+txn Sender
+itxn_field CloseRemainderTo
+txn Sender
+itxn_field Receiver
+itxn_submit
+int 1
+return
+main_l70:
+itxn_begin
+int axfer
+itxn_field TypeEnum
+byte "asa_id"
+app_global_get
+itxn_field XferAsset
+txn Sender
+itxn_field AssetReceiver
+txn Sender
+itxn_field AssetCloseTo
+int 0
+itxn_field AssetAmount
+itxn_submit
+b main_l69
+main_l71:
+byte "ERR NF"
+log
+err
+main_l72:
+byte "ERR STK"
+log
+err
+main_l73:
+txn ApplicationID
+int 0
+!=
+assert
+callsub assertadminorfeeadmin_6
+byte "contract_upgrade"
+app_global_get
+byte ""
+!=
+!
+bnz main_l86
+byte "contract_upgrade"
+app_global_get
+int 0
+extract_uint32
+global LatestTimestamp
+<
+!
+bnz main_l85
+byte "protest_sum"
+app_global_get
+int 0
+==
+!
+bnz main_l84
+byte "contract_upgrade"
+app_global_get
+extract 4 0
+store 0
+byte 0x425137ac
+load 0
+len
+int 32
+/
+itob
+concat
+txn NumApprovalProgramPages
+itob
+concat
+log
+txn NumApprovalProgramPages
+load 0
+len
+int 32
+/
+==
+!
+bnz main_l83
+int 0
+store 1
+main_l78:
+load 1
+txn NumApprovalProgramPages
+<
+bnz main_l80
+byte "contract_upgrade"
+byte ""
+app_global_put
+int 1
+return
+main_l80:
+load 0
+int 32
+load 1
+*
+int 32
+extract3
+load 1
+txnas ApprovalProgramPages
+sha512_256
+==
+!
+bnz main_l82
+byte 0x2882b40e
+load 1
+itob
+concat
+log
+load 1
+int 1
++
+store 1
+b main_l78
+main_l82:
+byte "ERR HASH"
+log
+err
+main_l83:
+byte "ERR SIZE"
+log
+err
+main_l84:
+byte "ERR PRTST"
+log
+err
+main_l85:
+byte "ERR EARLY"
+log
+err
+main_l86:
+byte "ERR NO UPG"
+log
+err
+main_l87:
+int 0
+return
+main_l88:
+int 0
+return
+main_l89:
+txn ApplicationID
+int 0
+==
+assert
+callsub createstorage_8
+int 1
+return
+
+// int_to_ascii
+inttoascii_0:
+proto 1 1
+byte "0123456789"
+frame_dig -1
+int 1
+extract3
+retsub
+
+// itoa
+itoa_1:
+proto 1 1
+frame_dig -1
+int 0
+==
+bnz itoa_1_l5
+frame_dig -1
+int 10
+/
+int 0
+>
+bnz itoa_1_l4
+byte ""
+itoa_1_l3:
+frame_dig -1
+int 10
+%
+callsub inttoascii_0
+concat
+b itoa_1_l6
+itoa_1_l4:
+frame_dig -1
+int 10
+/
+callsub itoa_1
+b itoa_1_l3
+itoa_1_l5:
+byte "0"
+itoa_1_l6:
+retsub
+
+// send_algo
+sendalgo_2:
+proto 3 0
+itxn_begin
+int pay
+itxn_field TypeEnum
+global CurrentApplicationAddress
+itxn_field Sender
+frame_dig -3
+itxn_field Receiver
+frame_dig -2
+itxn_field Amount
+frame_dig -1
+itxn_field Fee
+itxn_submit
+retsub
+
+// send_asa
+sendasa_3:
+proto 4 0
+itxn_begin
+int axfer
+itxn_field TypeEnum
+frame_dig -3
+itxn_field XferAsset
+frame_dig -4
+itxn_field AssetReceiver
+frame_dig -2
+itxn_field AssetAmount
+frame_dig -1
+itxn_field Fee
+itxn_submit
+retsub
+
+// assert_admin
+assertadmin_4:
+proto 0 0
+txn Sender
+byte "admin_addr"
+app_global_get
+==
+!
+bz assertadmin_4_l2
+byte "ERR UNAUTH"
+log
+err
+assertadmin_4_l2:
+retsub
+
+// assert_fee_admin
+assertfeeadmin_5:
+proto 0 0
+txn Sender
+byte "fee_admin_addr"
+app_global_get
+==
+!
+bz assertfeeadmin_5_l2
+byte "ERR UNAUTH"
+log
+err
+assertfeeadmin_5_l2:
+retsub
+
+// assert_admin_or_fee_admin
+assertadminorfeeadmin_6:
+proto 0 0
+txn Sender
+byte "fee_admin_addr"
+app_global_get
+==
+bnz assertadminorfeeadmin_6_l2
+callsub assertadmin_4
+b assertadminorfeeadmin_6_l3
+assertadminorfeeadmin_6_l2:
+retsub
+assertadminorfeeadmin_6_l3:
+retsub
+
+// assert_fee_admin_or_node_runner
+assertfeeadminornoderunner_7:
+proto 0 0
+txn Sender
+byte "noderunner_addr"
+app_global_get
+==
+bnz assertfeeadminornoderunner_7_l2
+callsub assertfeeadmin_5
+b assertfeeadminornoderunner_7_l3
+assertfeeadminornoderunner_7_l2:
+retsub
+assertfeeadminornoderunner_7_l3:
+retsub
+
+// create_storage
+createstorage_8:
+proto 0 0
+byte "asa_id"
+app_global_get
+int 0
+==
+!
+bz createstorage_8_l2
+byte "ERR I"
+log
+err
+createstorage_8_l2:
+byte "v"
+int 1
+app_global_put
+byte "asa_id"
+int 0
+app_global_put
+byte "lst_id"
+int 0
+app_global_put
+byte "delay_optin"
+int 0
+app_global_put
+byte "staked"
+int 0
+app_global_put
+byte "platform_fees"
+int 0
+app_global_put
+byte "noderunner_fees"
+int 0
+app_global_put
+byte "platform_fee_bps"
+int 0
+app_global_put
+byte "noderunner_fee_bps"
+int 0
+app_global_put
+byte "admin_addr"
+txn Sender
+app_global_put
+byte "fee_admin_addr"
+txn Sender
+app_global_put
+byte "noderunner_addr"
+txn Sender
+app_global_put
+byte "lp_type"
+byte ""
+app_global_put
+byte "lp_id"
+byte ""
+app_global_put
+byte "fee_update"
+byte ""
+app_global_put
+byte "contract_upgrade"
+byte ""
+app_global_put
+byte "protest_cnt"
+int 0
+app_global_put
+byte "protest_sum"
+int 0
+app_global_put
+byte "upgrade_period"
+int 0
+app_global_put
+byte "fee_update_period"
+int 0
+app_global_put
+byte "fee_update_max_delta"
+int 0
+app_global_put
+byte "max_balance"
+int 0
+app_global_put
+byte "rate_precision"
+int 0
+app_global_put
+byte "tm2_app_id"
+int 0
+app_global_put
+byte "arc59_app_id"
+int 0
+app_global_put
+retsub
+
+// maybe_apply_fee_update
+maybeapplyfeeupdate_9:
+proto 0 0
+byte "fee_update"
+app_global_get
+byte ""
+!=
+bz maybeapplyfeeupdate_9_l3
+byte "fee_update"
+app_global_get
+int 0
+extract_uint64
+global LatestTimestamp
+<
+bz maybeapplyfeeupdate_9_l3
+byte "fee_update"
+app_global_get
+int 8
+extract_uint64
+byte "fee_update"
+app_global_get
+int 16
+extract_uint64
+callsub applyfeeupdates_10
+byte "fee_update"
+byte ""
+app_global_put
+maybeapplyfeeupdate_9_l3:
+retsub
+
+// apply_fee_updates
+applyfeeupdates_10:
+proto 2 0
+byte "noderunner_fee_bps"
+frame_dig -2
+app_global_put
+byte "platform_fee_bps"
+frame_dig -1
+app_global_put
+byte 0x0310c2ed
+frame_dig -2
+itob
+concat
+frame_dig -1
+itob
+concat
+log
+retsub
+
+// queue_update_fees
+queueupdatefees_11:
+proto 2 1
+int 0
+callsub assertfeeadmin_5
+byte "noderunner_fee_bps"
+app_global_get
+frame_dig -1
+>
+bnz queueupdatefees_11_l12
+frame_dig -1
+byte "noderunner_fee_bps"
+app_global_get
+-
+queueupdatefees_11_l2:
+byte "fee_update_max_delta"
+app_global_get
+<=
+!
+bnz queueupdatefees_11_l11
+byte "platform_fee_bps"
+app_global_get
+frame_dig -2
+>
+bnz queueupdatefees_11_l10
+frame_dig -2
+byte "platform_fee_bps"
+app_global_get
+-
+queueupdatefees_11_l5:
+byte "fee_update_max_delta"
+app_global_get
+<=
+!
+bnz queueupdatefees_11_l9
+frame_dig -1
+byte "noderunner_fee_bps"
+app_global_get
+<=
+frame_dig -2
+byte "platform_fee_bps"
+app_global_get
+<=
+&&
+bnz queueupdatefees_11_l8
+global LatestTimestamp
+byte "fee_update_period"
+app_global_get
++
+store 4
+byte "fee_update"
+load 4
+itob
+frame_dig -1
+itob
+concat
+frame_dig -2
+itob
+concat
+app_global_put
+byte 0x50639341
+load 4
+itob
+concat
+frame_dig -1
+itob
+concat
+frame_dig -2
+itob
+concat
+log
+load 4
+frame_bury 0
+b queueupdatefees_11_l13
+queueupdatefees_11_l8:
+frame_dig -1
+frame_dig -2
+callsub applyfeeupdates_10
+int 0
+frame_bury 0
+b queueupdatefees_11_l13
+queueupdatefees_11_l9:
+byte "ERR DELTA P"
+log
+err
+queueupdatefees_11_l10:
+byte "platform_fee_bps"
+app_global_get
+frame_dig -2
+-
+b queueupdatefees_11_l5
+queueupdatefees_11_l11:
+byte "ERR DELTA N"
+log
+err
+queueupdatefees_11_l12:
+byte "noderunner_fee_bps"
+app_global_get
+frame_dig -1
+-
+b queueupdatefees_11_l2
+queueupdatefees_11_l13:
+retsub
+
+// reset_update_fees
+resetupdatefees_12:
+proto 0 0
+callsub assertfeeadmin_5
+byte "fee_update"
+app_global_get
+byte ""
+!=
+!
+bz resetupdatefees_12_l2
+byte "ERR NOU"
+log
+err
+resetupdatefees_12_l2:
+byte "fee_update"
+byte ""
+app_global_put
+retsub
+
+// pre_mint_or_redeem
+premintorredeem_13:
+proto 0 1
+int 255255255
+store 255
+callsub maybeapplyfeeupdate_9
+byte "delay_optin"
+app_global_get
+int 0
+==
+global CurrentApplicationAddress
+balance
+global PayoutsMinBalance
+>
+||
+byte "staked"
+app_global_get
+int 0
+>
+&&
+callsub getactualexpectedbalancedelta_17
+global MinTxnFee
+int 1000
+*
+>
+&&
+bnz premintorredeem_13_l2
+int 0
+retsub
+premintorredeem_13_l2:
+callsub maybeoptin_15
+callsub swap_14
+retsub
+
+// swap
+swap_14:
+proto 0 1
+callsub getactualexpectedbalancedelta_17
+int 3
+global MinTxnFee
+*
+-
+store 11
+byte "platform_fee_bps"
+app_global_get
+load 11
+*
+int 10000
+/
+store 12
+byte "platform_fees"
+load 12
+byte "platform_fees"
+app_global_get
++
+app_global_put
+byte "noderunner_fee_bps"
+app_global_get
+load 11
+*
+int 10000
+/
+store 14
+byte "noderunner_fees"
+load 14
+byte "noderunner_fees"
+app_global_get
++
+app_global_put
+load 11
+load 14
+-
+load 12
+-
+store 15
+byte "lp_type"
+app_global_get
+byte "tm2"
+==
+bnz swap_14_l2
+byte "ERR !IMPL"
+log
+err
+int 0
+swap_14_l2:
+byte "lp_id"
+app_global_get
+byte "tm2_app_id"
+app_global_get
+byte "asset_1_id"
+app_local_get_ex
+store 18
+store 17
+byte "lp_id"
+app_global_get
+byte "tm2_app_id"
+app_global_get
+byte "asset_1_reserves"
+app_local_get_ex
+store 20
+store 19
+byte "lp_id"
+app_global_get
+byte "tm2_app_id"
+app_global_get
+byte "asset_2_reserves"
+app_local_get_ex
+store 22
+store 21
+byte "lp_id"
+app_global_get
+byte "tm2_app_id"
+app_global_get
+byte "total_fee_share"
+app_local_get_ex
+store 24
+store 23
+load 18
+load 22
+&&
+load 20
+&&
+load 24
+&&
+!
+bnz swap_14_l9
+load 17
+int 0
+==
+bnz swap_14_l8
+load 19
+int 1
+-
+load 21
+load 19
+mulw
+int 0
+load 21
+load 15
+load 23
+load 15
+*
+int 10000
+/
+-
++
+divmodw
+pop
+pop
+swap
+!
+assert
+-
+swap_14_l5:
+store 16
+load 16
+int 0
+==
+bnz swap_14_l7
+itxn_begin
+int pay
+itxn_field TypeEnum
+byte "lp_id"
+app_global_get
+itxn_field Receiver
+load 15
+itxn_field Amount
+global MinTxnFee
+itxn_field Fee
+itxn_next
+int appl
+itxn_field TypeEnum
+int NoOp
+itxn_field OnCompletion
+byte "tm2_app_id"
+app_global_get
+itxn_field ApplicationID
+byte "swap"
+itxn_field ApplicationArgs
+byte "fixed-input"
+itxn_field ApplicationArgs
+load 16
+itob
+itxn_field ApplicationArgs
+byte "asa_id"
+app_global_get
+itxn_field Assets
+byte "lp_id"
+app_global_get
+itxn_field Accounts
+int 2
+global MinTxnFee
+*
+itxn_field Fee
+itxn_submit
+byte 0x900e5bbb
+load 15
+itob
+concat
+load 16
+itob
+concat
+log
+byte 0x3f235ee1
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 25
+itob
+concat
+log
+int 1
+b swap_14_l10
+swap_14_l7:
+int 0
+b swap_14_l10
+swap_14_l8:
+load 21
+int 1
+-
+load 19
+load 21
+mulw
+int 0
+load 19
+load 15
+load 23
+load 15
+*
+int 10000
+/
+-
++
+divmodw
+pop
+pop
+swap
+!
+assert
+-
+b swap_14_l5
+swap_14_l9:
+byte "ERR LP"
+log
+err
+swap_14_l10:
+retsub
+
+// maybe_optin
+maybeoptin_15:
+proto 0 0
+byte "delay_optin"
+app_global_get
+bz maybeoptin_15_l2
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+int 0
+global MinTxnFee
+callsub sendasa_3
+byte "delay_optin"
+int 0
+app_global_put
+maybeoptin_15_l2:
+retsub
+
+// get_expected_balance
+getexpectedbalance_16:
+proto 0 1
+byte "staked"
+app_global_get
+byte "platform_fees"
+app_global_get
++
+byte "noderunner_fees"
+app_global_get
++
+global CurrentApplicationAddress
+min_balance
+byte "delay_optin"
+app_global_get
+bnz getexpectedbalance_16_l2
+int 0
+b getexpectedbalance_16_l3
+getexpectedbalance_16_l2:
+global AssetOptInMinBalance
+global MinTxnFee
++
+getexpectedbalance_16_l3:
++
++
+retsub
+
+// get_actual_expected_balance_delta
+getactualexpectedbalancedelta_17:
+proto 0 1
+global CurrentApplicationAddress
+balance
+store 26
+callsub getexpectedbalance_16
+store 27
+load 26
+load 27
+>
+bnz getactualexpectedbalancedelta_17_l2
+int 0
+b getactualexpectedbalancedelta_17_l3
+getactualexpectedbalancedelta_17_l2:
+load 26
+load 27
+-
+getactualexpectedbalancedelta_17_l3:
+retsub
+
+// configure
+configure_18:
+proto 16 0
+callsub assertadminorfeeadmin_6
+byte "lst_id"
+app_global_get
+int 0
+==
+!
+bnz configure_18_l8
+byte "asa_id"
+frame_dig -16
+app_global_put
+byte "lp_type"
+frame_dig -15
+extract 2 0
+app_global_put
+byte "lp_id"
+frame_dig -14
+extract 2 0
+app_global_put
+byte "platform_fee_bps"
+frame_dig -13
+app_global_put
+byte "noderunner_fee_bps"
+frame_dig -12
+app_global_put
+byte "admin_addr"
+frame_dig -11
+app_global_put
+byte "fee_admin_addr"
+frame_dig -10
+app_global_put
+byte "noderunner_addr"
+frame_dig -9
+app_global_put
+byte "delay_optin"
+frame_dig -8
+app_global_put
+byte "upgrade_period"
+frame_dig -6
+app_global_put
+byte "fee_update_period"
+frame_dig -5
+app_global_put
+byte "fee_update_max_delta"
+frame_dig -4
+app_global_put
+byte "max_balance"
+frame_dig -7
+app_global_put
+byte "rate_precision"
+frame_dig -3
+app_global_put
+byte "tm2_app_id"
+frame_dig -2
+app_global_put
+byte "arc59_app_id"
+frame_dig -1
+app_global_put
+frame_dig -8
+!
+bnz configure_18_l7
+configure_18_l2:
+frame_dig -15
+extract 2 0
+byte "tm2"
+==
+bnz configure_18_l5
+configure_18_l3:
+frame_dig -1
+app_params_get AppApprovalProgram
+store 5
+sha512_256
+byte 0xe650b2ed3f254b7c8b71a8bd7550fb783911edeefd451fe46c369eb429fef0a7
+==
+!
+bz configure_18_l9
+byte "ERR ARC59"
+log
+err
+configure_18_l5:
+frame_dig -14
+extract 2 0
+frame_dig -2
+byte "asset_1_id"
+app_local_get_ex
+store 7
+store 6
+frame_dig -14
+extract 2 0
+frame_dig -2
+byte "asset_2_id"
+app_local_get_ex
+store 9
+store 8
+load 6
+frame_dig -16
+==
+load 8
+int 0
+==
+&&
+load 8
+frame_dig -16
+==
+load 6
+int 0
+==
+&&
+||
+!
+bz configure_18_l3
+byte "ERR TM2"
+log
+err
+configure_18_l7:
+global CurrentApplicationAddress
+frame_dig -16
+int 0
+global MinTxnFee
+callsub sendasa_3
+b configure_18_l2
+configure_18_l8:
+byte "ERR CFGD"
+log
+err
+configure_18_l9:
+retsub
+
+// configure2
+configure2_19:
+proto 3 0
+byte "lst_id"
+app_global_get
+int 0
+==
+!
+bnz configure2_19_l3
+txn Sender
+byte "admin_addr"
+app_global_get
+==
+global CallerApplicationID
+app_params_get AppCreator
+store 10
+byte "admin_addr"
+app_global_get
+==
+||
+!
+bz configure2_19_l4
+byte "ERR UNAUTH"
+log
+err
+configure2_19_l3:
+byte "ERR CFGD"
+log
+err
+configure2_19_l4:
+byte "lst_id"
+itxn_begin
+int appl
+itxn_field TypeEnum
+int DeleteApplication
+itxn_field OnCompletion
+byte base64(C4EBQw==)
+itxn_field ApprovalProgram
+byte base64(C4EBQw==)
+itxn_field ClearStateProgram
+itxn_submit
+itxn_begin
+int acfg
+itxn_field TypeEnum
+frame_dig -3
+extract 2 0
+itxn_field ConfigAssetName
+frame_dig -2
+extract 2 0
+itxn_field ConfigAssetUnitName
+frame_dig -1
+extract 2 0
+itxn CreatedApplicationID
+int 1
++
+callsub itoa_1
+concat
+itxn_field ConfigAssetURL
+int 6
+itxn_field ConfigAssetDecimals
+int 10000000000000000
+itxn_field ConfigAssetTotal
+global CurrentApplicationAddress
+itxn_field ConfigAssetManager
+global CurrentApplicationAddress
+itxn_field ConfigAssetReserve
+itxn_submit
+itxn CreatedAssetID
+app_global_put
+retsub
+
+// change_admin_1
+changeadmin1_20:
+proto 1 0
+callsub assertadmin_4
+frame_dig -1
+store 13
+retsub
+
+// change_admin_2
+changeadmin2_21:
+proto 0 0
+txn GroupIndex
+int 1
+-
+gtxns TypeEnum
+int appl
+==
+!
+bnz changeadmin2_21_l9
+txn GroupIndex
+int 1
+-
+gtxns OnCompletion
+int NoOp
+==
+!
+bnz changeadmin2_21_l8
+txn GroupIndex
+int 1
+-
+gtxns ApplicationID
+global CurrentApplicationID
+==
+!
+bnz changeadmin2_21_l7
+txn GroupIndex
+int 1
+-
+gtxnsa ApplicationArgs 0
+method "change_admin_1(address)void"
+==
+!
+bnz changeadmin2_21_l6
+txn Sender
+gload 0 13
+==
+!
+bz changeadmin2_21_l10
+byte "ERR NA"
+log
+err
+changeadmin2_21_l6:
+byte "ERR ARG"
+log
+err
+changeadmin2_21_l7:
+byte "ERR APID"
+log
+err
+changeadmin2_21_l8:
+byte "ERR OC"
+log
+err
+changeadmin2_21_l9:
+byte "ERR TXT"
+log
+err
+changeadmin2_21_l10:
+byte "admin_addr"
+gload 0 13
+app_global_put
+retsub
+
+// change_noderunner
+changenoderunner_22:
+proto 1 0
+callsub assertfeeadminornoderunner_7
+callsub premintorredeem_13
+pop
+byte "noderunner_fees"
+app_global_get
+int 0
+==
+!
+bz changenoderunner_22_l2
+byte "ERR FEE"
+log
+err
+changenoderunner_22_l2:
+byte "noderunner_addr"
+frame_dig -1
+app_global_put
+retsub
+
+// change_feeaddr
+changefeeaddr_23:
+proto 1 0
+callsub assertadminorfeeadmin_6
+byte "fee_admin_addr"
+frame_dig -1
+app_global_put
+retsub
+
+// update_max_balance
+updatemaxbalance_24:
+proto 1 0
+callsub assertfeeadmin_5
+frame_dig -1
+int 65432100000000
+<=
+!
+bz updatemaxbalance_24_l2
+byte "ERR MAX"
+log
+err
+updatemaxbalance_24_l2:
+byte "max_balance"
+frame_dig -1
+app_global_put
+retsub
+
+// withdraw_ds_surplus
+withdrawdssurplus_25:
+proto 0 0
+callsub assertfeeadmin_5
+byte "lst_id"
+app_global_get
+asset_params_get AssetTotal
+store 30
+byte "staked"
+app_global_get
+-
+byte "protest_sum"
+app_global_get
++
+store 28
+global CurrentApplicationAddress
+byte "lst_id"
+app_global_get
+asset_holding_get AssetBalance
+store 31
+store 29
+load 29
+load 28
+>
+!
+bz withdrawdssurplus_25_l2
+byte "ERR ZERO"
+log
+err
+withdrawdssurplus_25_l2:
+txn Sender
+byte "lst_id"
+app_global_get
+load 29
+load 28
+-
+int 0
+callsub sendasa_3
+retsub
+
+// verify_nfdomains
+verifynfdomains_26:
+proto 3 0
+callsub assertfeeadmin_5
+itxn_begin
+int appl
+itxn_field TypeEnum
+int NoOp
+itxn_field OnCompletion
+frame_dig -3
+itxn_field ApplicationID
+byte "verify_nfd_addr"
+itxn_field ApplicationArgs
+frame_dig -1
+extract 2 0
+byte ".dualstake.algo"
+concat
+itxn_field ApplicationArgs
+frame_dig -2
+itob
+itxn_field ApplicationArgs
+global CurrentApplicationAddress
+itxn_field ApplicationArgs
+frame_dig -2
+itxn_field Applications
+int 0
+itxn_field Fee
+itxn_submit
+retsub
+
+// withdraw_node_runner_fees
+withdrawnoderunnerfees_27:
+proto 1 0
+callsub assertfeeadminornoderunner_7
+frame_dig -1
+int 0
+>
+!
+bnz withdrawnoderunnerfees_27_l3
+frame_dig -1
+byte "noderunner_fees"
+app_global_get
+<=
+!
+bz withdrawnoderunnerfees_27_l4
+byte "ERR OVER"
+log
+err
+withdrawnoderunnerfees_27_l3:
+byte "ERR ZERO"
+log
+err
+withdrawnoderunnerfees_27_l4:
+byte "noderunner_addr"
+app_global_get
+frame_dig -1
+int 0
+callsub sendalgo_2
+byte "noderunner_fees"
+byte "noderunner_fees"
+app_global_get
+frame_dig -1
+-
+app_global_put
+retsub
+
+// withdraw_platform_fees
+withdrawplatformfees_28:
+proto 1 0
+callsub assertfeeadmin_5
+frame_dig -1
+int 0
+>
+!
+bnz withdrawplatformfees_28_l3
+frame_dig -1
+byte "platform_fees"
+app_global_get
+<=
+!
+bz withdrawplatformfees_28_l4
+byte "ERR OVER"
+log
+err
+withdrawplatformfees_28_l3:
+byte "ERR ZERO"
+log
+err
+withdrawplatformfees_28_l4:
+txn Sender
+frame_dig -1
+int 0
+callsub sendalgo_2
+byte "platform_fees"
+byte "platform_fees"
+app_global_get
+frame_dig -1
+-
+app_global_put
+retsub
+
+// validate_asa_payment_after
+validateasapaymentafter_29:
+proto 2 1
+txn GroupIndex
+frame_dig -2
++
+gtxns TypeEnum
+int axfer
+==
+!
+bnz validateasapaymentafter_29_l5
+txn GroupIndex
+frame_dig -2
++
+gtxns AssetReceiver
+global CurrentApplicationAddress
+==
+!
+bnz validateasapaymentafter_29_l4
+txn GroupIndex
+frame_dig -2
++
+gtxns XferAsset
+frame_dig -1
+==
+!
+bz validateasapaymentafter_29_l6
+byte "ERR AID"
+log
+err
+validateasapaymentafter_29_l4:
+byte "ERR PAY"
+log
+err
+validateasapaymentafter_29_l5:
+byte "ERR PAY"
+log
+err
+validateasapaymentafter_29_l6:
+txn GroupIndex
+frame_dig -2
++
+gtxns AssetAmount
+retsub
+
+// validate_asa_payment_before
+validateasapaymentbefore_30:
+proto 2 1
+txn GroupIndex
+frame_dig -2
+-
+gtxns TypeEnum
+int axfer
+==
+!
+bnz validateasapaymentbefore_30_l5
+txn GroupIndex
+frame_dig -2
+-
+gtxns AssetReceiver
+global CurrentApplicationAddress
+==
+!
+bnz validateasapaymentbefore_30_l4
+txn GroupIndex
+frame_dig -2
+-
+gtxns XferAsset
+frame_dig -1
+==
+!
+bz validateasapaymentbefore_30_l6
+byte "ERR AID"
+log
+err
+validateasapaymentbefore_30_l4:
+byte "ERR PAY"
+log
+err
+validateasapaymentbefore_30_l5:
+byte "ERR PAY"
+log
+err
+validateasapaymentbefore_30_l6:
+txn GroupIndex
+frame_dig -2
+-
+gtxns AssetAmount
+retsub
+
+// validate_algo_payment_after
+validatealgopaymentafter_31:
+proto 1 1
+txn GroupIndex
+frame_dig -1
++
+gtxns TypeEnum
+int pay
+==
+!
+bnz validatealgopaymentafter_31_l5
+txn GroupIndex
+frame_dig -1
++
+gtxns Receiver
+global CurrentApplicationAddress
+==
+!
+bnz validatealgopaymentafter_31_l4
+txn GroupIndex
+frame_dig -1
++
+gtxns Amount
+int 1000000
+>=
+!
+bz validatealgopaymentafter_31_l6
+byte "ERR MIN AMT"
+log
+err
+validatealgopaymentafter_31_l4:
+byte "ERR PAY"
+log
+err
+validatealgopaymentafter_31_l5:
+byte "ERR PAY"
+log
+err
+validatealgopaymentafter_31_l6:
+txn GroupIndex
+frame_dig -1
++
+gtxns Amount
+retsub
+
+// keyreg_online
+keyregonline_32:
+proto 7 0
+callsub assertfeeadminornoderunner_7
+global CurrentApplicationAddress
+acct_params_get AcctIncentiveEligible
+store 33
+store 32
+frame_dig -1
+int 0
+>
+bnz keyregonline_32_l7
+keyregonline_32_l1:
+load 32
+int 1
+==
+bnz keyregonline_32_l5
+frame_dig -1
+global PayoutsGoOnlineFee
+==
+!
+bnz keyregonline_32_l4
+byte 0x652cb004
+byte 0x01
+concat
+log
+b keyregonline_32_l9
+keyregonline_32_l4:
+byte "ERR !IE"
+log
+err
+keyregonline_32_l5:
+byte 0x652cb004
+byte 0x00
+concat
+log
+frame_dig -1
+int 0
+==
+!
+bz keyregonline_32_l9
+byte "ERR IE"
+log
+err
+keyregonline_32_l7:
+int 1
+callsub validatealgopaymentafter_31
+frame_dig -1
+==
+!
+bz keyregonline_32_l1
+byte "ERR PAY AMT"
+log
+err
+keyregonline_32_l9:
+itxn_begin
+int keyreg
+itxn_field TypeEnum
+frame_dig -7
+extract 2 0
+itxn_field SelectionPK
+frame_dig -6
+extract 2 0
+itxn_field VotePK
+frame_dig -5
+extract 2 0
+itxn_field StateProofPK
+frame_dig -4
+itxn_field VoteFirst
+frame_dig -3
+itxn_field VoteLast
+frame_dig -2
+itxn_field VoteKeyDilution
+frame_dig -1
+itxn_field Fee
+itxn_submit
+retsub
+
+// keyreg_offline
+keyregoffline_33:
+proto 0 0
+callsub assertfeeadminornoderunner_7
+byte 0x2c9dace6
+log
+itxn_begin
+int keyreg
+itxn_field TypeEnum
+int 0
+itxn_field Fee
+itxn_submit
+retsub
+
+// arc59_send_asa_and_algo
+arc59sendasaandalgo_34:
+proto 4 0
+byte ""
+int 0
+dupn 2
+byte ""
+global CurrentApplicationAddress
+balance
+store 49
+itxn_begin
+int appl
+itxn_field TypeEnum
+byte "arc59_app_id"
+app_global_get
+itxn_field ApplicationID
+method "arc59_getSendAssetInfo(address,uint64)(uint64,uint64,bool,bool,uint64,uint64)"
+itxn_field ApplicationArgs
+frame_dig -4
+itxn_field ApplicationArgs
+frame_dig -2
+itob
+itxn_field ApplicationArgs
+itxn_submit
+itxn LastLog
+int 4
+itxn LastLog
+len
+substring3
+frame_bury 0
+frame_dig 0
+int 0
+extract_uint64
+frame_bury 1
+frame_dig 0
+int 8
+extract_uint64
+frame_bury 2
+frame_dig 0
+int 128
+getbit
+frame_bury 3
+byte "arc59_app_id"
+app_global_get
+app_params_get AppAddress
+store 48
+store 47
+frame_dig 2
+int 0
+>
+bnz arc59sendasaandalgo_34_l9
+arc59sendasaandalgo_34_l1:
+frame_dig 3
+!
+bnz arc59sendasaandalgo_34_l8
+arc59sendasaandalgo_34_l2:
+frame_dig 1
+int 5
+>=
+bnz arc59sendasaandalgo_34_l7
+itxn_begin
+int appl
+itxn_field TypeEnum
+byte "arc59_app_id"
+app_global_get
+itxn_field ApplicationID
+method "arc59_getOrCreateInbox(address)address"
+itxn_field ApplicationArgs
+frame_dig -4
+itxn_field ApplicationArgs
+itxn_submit
+itxn LastLog
+int 4
+itxn LastLog
+len
+substring3
+frame_bury 4
+arc59sendasaandalgo_34_l4:
+itxn_begin
+int axfer
+itxn_field TypeEnum
+load 47
+itxn_field AssetReceiver
+frame_dig -2
+itxn_field XferAsset
+frame_dig -1
+itxn_field AssetAmount
+global MinTxnFee
+itxn_field Fee
+itxn_next
+int appl
+itxn_field TypeEnum
+byte "arc59_app_id"
+app_global_get
+itxn_field ApplicationID
+method "arc59_sendAsset(axfer,address,uint64)address"
+itxn_field ApplicationArgs
+frame_dig -4
+itxn_field ApplicationArgs
+int 0
+itob
+itxn_field ApplicationArgs
+frame_dig 4
+frame_dig -2
+asset_holding_get AssetBalance
+store 51
+store 50
+load 51
+bnz arc59sendasaandalgo_34_l6
+int 4
+global MinTxnFee
+*
+b arc59sendasaandalgo_34_l10
+arc59sendasaandalgo_34_l6:
+int 2
+global MinTxnFee
+*
+b arc59sendasaandalgo_34_l10
+arc59sendasaandalgo_34_l7:
+itxn_begin
+int appl
+itxn_field TypeEnum
+byte "arc59_app_id"
+app_global_get
+itxn_field ApplicationID
+method "arc59_getOrCreateInbox(address)address"
+itxn_field ApplicationArgs
+frame_dig -4
+itxn_field ApplicationArgs
+int 4
+global MinTxnFee
+*
+itxn_field Fee
+itxn_submit
+itxn LastLog
+int 4
+itxn LastLog
+len
+substring3
+frame_bury 4
+frame_dig 4
+global MinBalance
+global MinTxnFee
+callsub sendalgo_2
+b arc59sendasaandalgo_34_l4
+arc59sendasaandalgo_34_l8:
+itxn_begin
+int appl
+itxn_field TypeEnum
+byte "arc59_app_id"
+app_global_get
+itxn_field ApplicationID
+method "arc59_optRouterIn(uint64)void"
+itxn_field ApplicationArgs
+frame_dig -2
+itob
+itxn_field ApplicationArgs
+int 2
+global MinTxnFee
+*
+itxn_field Fee
+itxn_submit
+b arc59sendasaandalgo_34_l2
+arc59sendasaandalgo_34_l9:
+load 47
+frame_dig 2
+global MinTxnFee
+callsub sendalgo_2
+b arc59sendasaandalgo_34_l1
+arc59sendasaandalgo_34_l10:
+itxn_field Fee
+itxn_submit
+load 49
+global CurrentApplicationAddress
+balance
+-
+store 49
+frame_dig -4
+frame_dig -3
+load 49
+-
+global MinTxnFee
+-
+global MinTxnFee
+callsub sendalgo_2
+retsub
+
+// protest_stake
+proteststake_35:
+proto 0 0
+byte "contract_upgrade"
+app_global_get
+byte ""
+!=
+!
+bnz proteststake_35_l6
+int 1
+byte "lst_id"
+app_global_get
+callsub validateasapaymentbefore_30
+store 34
+load 34
+int 1000000
+>=
+!
+bnz proteststake_35_l5
+txn Sender
+box_len
+store 36
+store 35
+load 36
+bnz proteststake_35_l4
+byte "protest_cnt"
+int 1
+byte "protest_cnt"
+app_global_get
++
+app_global_put
+txn Sender
+load 34
+itob
+box_put
+b proteststake_35_l7
+proteststake_35_l4:
+txn Sender
+txn Sender
+callsub getuserprotestingstake_42
+load 34
++
+itob
+box_put
+b proteststake_35_l7
+proteststake_35_l5:
+byte "ERR MIN PRTST"
+log
+err
+proteststake_35_l6:
+byte "ERR NO UPG"
+log
+err
+proteststake_35_l7:
+byte 0xbccaa98f
+load 34
+itob
+concat
+log
+byte "protest_sum"
+load 34
+byte "protest_sum"
+app_global_get
++
+app_global_put
+retsub
+
+// unprotest_stake
+unproteststake_36:
+proto 0 0
+txn Sender
+int 1
+callsub internalunproteststake_39
+retsub
+
+// admin_unprotest_stake
+adminunproteststake_37:
+proto 1 0
+callsub assertfeeadmin_5
+byte "contract_upgrade"
+app_global_get
+byte ""
+==
+!
+bz adminunproteststake_37_l2
+byte "ERR UPG"
+log
+err
+adminunproteststake_37_l2:
+frame_dig -1
+int 0
+callsub internalunproteststake_39
+retsub
+
+// dissolve_protesting_stake
+dissolveprotestingstake_38:
+proto 1 0
+callsub assertfeeadmin_5
+callsub premintorredeem_13
+pop
+byte "contract_upgrade"
+app_global_get
+int 0
+extract_uint32
+global LatestTimestamp
+<
+!
+bz dissolveprotestingstake_38_l2
+byte "ERR EARLY"
+log
+err
+dissolveprotestingstake_38_l2:
+frame_dig -1
+callsub getuserprotestingstake_42
+store 40
+frame_dig -1
+load 40
+global MinTxnFee
+callsub internalredeem_41
+frame_dig -1
+load 40
+callsub internalunprotestadjuststate_40
+retsub
+
+// internal_unprotest_stake
+internalunproteststake_39:
+proto 2 0
+frame_dig -2
+callsub getuserprotestingstake_42
+store 39
+frame_dig -2
+byte "lst_id"
+app_global_get
+load 39
+int 0
+callsub sendasa_3
+frame_dig -2
+load 39
+callsub internalunprotestadjuststate_40
+byte 0x02da2e96
+load 39
+itob
+concat
+frame_dig -1
+bnz internalunproteststake_39_l2
+byte 0x00
+b internalunproteststake_39_l3
+internalunproteststake_39_l2:
+byte 0x01
+internalunproteststake_39_l3:
+concat
+log
+retsub
+
+// internal_unprotest_adjust_state
+internalunprotestadjuststate_40:
+proto 2 0
+byte "protest_cnt"
+byte "protest_cnt"
+app_global_get
+int 1
+-
+app_global_put
+byte "protest_sum"
+byte "protest_sum"
+app_global_get
+frame_dig -1
+-
+app_global_put
+frame_dig -2
+box_del
+!
+bz internalunprotestadjuststate_40_l2
+byte "ERR BOX DEL"
+log
+err
+internalunprotestadjuststate_40_l2:
+retsub
+
+// internal_redeem
+internalredeem_41:
+proto 3 0
+frame_dig -2
+!
+bnz internalredeem_41_l13
+load 255
+int 255255255
+==
+!
+bnz internalredeem_41_l12
+byte "staked"
+app_global_get
+int 0
+==
+bnz internalredeem_41_l11
+byte "rate_precision"
+app_global_get
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 43
+mulw
+int 0
+byte "staked"
+app_global_get
+divmodw
+pop
+pop
+swap
+!
+assert
+internalredeem_41_l4:
+store 41
+byte 0x8a4dafe7
+load 41
+itob
+concat
+log
+load 41
+int 0
+>
+bnz internalredeem_41_l6
+int 0
+store 42
+frame_dig -3
+frame_dig -2
+frame_dig -1
+-
+frame_dig -1
+callsub sendalgo_2
+b internalredeem_41_l14
+internalredeem_41_l6:
+frame_dig -2
+load 41
+mulw
+int 0
+byte "rate_precision"
+app_global_get
+divmodw
+pop
+pop
+swap
+!
+assert
+store 42
+frame_dig -3
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 45
+store 44
+load 45
+bnz internalredeem_41_l10
+frame_dig -1
+int 0
+>
+!
+bnz internalredeem_41_l9
+frame_dig -3
+frame_dig -2
+byte "asa_id"
+app_global_get
+load 42
+callsub arc59sendasaandalgo_34
+b internalredeem_41_l14
+internalredeem_41_l9:
+byte "ERR FEES"
+log
+err
+internalredeem_41_l10:
+frame_dig -3
+byte "asa_id"
+app_global_get
+load 42
+frame_dig -1
+callsub sendasa_3
+frame_dig -3
+frame_dig -2
+int 2
+frame_dig -1
+*
+-
+frame_dig -1
+callsub sendalgo_2
+b internalredeem_41_l14
+internalredeem_41_l11:
+int 0
+b internalredeem_41_l4
+internalredeem_41_l12:
+byte "ERR NP"
+log
+err
+internalredeem_41_l13:
+byte "ERR ZERO"
+log
+err
+internalredeem_41_l14:
+byte 0x623647b0
+frame_dig -2
+itob
+concat
+load 42
+itob
+concat
+log
+byte 0x3f235ee1
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 46
+itob
+concat
+log
+byte "staked"
+byte "staked"
+app_global_get
+frame_dig -2
+-
+app_global_put
+retsub
+
+// get_user_protesting_stake
+getuserprotestingstake_42:
+proto 1 1
+frame_dig -1
+box_get
+store 38
+store 37
+load 38
+!
+bz getuserprotestingstake_42_l2
+byte "ERR NO PRTST"
+log
+err
+getuserprotestingstake_42_l2:
+load 37
+btoi
+retsub
+
+// queue_upgrade
+queueupgrade_43:
+proto 1 0
+callsub assertadmin_4
+frame_dig -1
+extract 2 0
+len
+int 32
+%
+int 0
+==
+!
+bz queueupgrade_43_l2
+byte "ERR HASH LEN"
+log
+err
+queueupgrade_43_l2:
+byte "contract_upgrade"
+global LatestTimestamp
+byte "upgrade_period"
+app_global_get
++
+itob
+extract 4 4
+frame_dig -1
+extract 2 0
+concat
+app_global_put
+retsub
+
+// reset_upgrade
+resetupgrade_44:
+proto 0 0
+callsub assertadminorfeeadmin_6
+byte "contract_upgrade"
+app_global_get
+byte ""
+!=
+!
+bz resetupgrade_44_l2
+byte "ERR NO C UPGR"
+log
+err
+resetupgrade_44_l2:
+byte "contract_upgrade"
+byte ""
+app_global_put
+retsub
+
+// mint
+mint_45:
+proto 0 0
+byte "lst_id"
+app_global_get
+int 0
+!=
+!
+bnz mint_45_l12
+callsub premintorredeem_13
+pop
+int 1
+callsub validatealgopaymentafter_31
+store 52
+global CurrentApplicationAddress
+balance
+load 52
++
+byte "max_balance"
+app_global_get
+<=
+!
+bnz mint_45_l11
+load 255
+int 255255255
+==
+!
+bnz mint_45_l10
+byte "staked"
+app_global_get
+int 0
+==
+bnz mint_45_l9
+byte "rate_precision"
+app_global_get
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 56
+mulw
+int 0
+byte "staked"
+app_global_get
+divmodw
+pop
+pop
+swap
+!
+assert
+mint_45_l5:
+store 53
+byte 0x8a4dafe7
+load 53
+itob
+concat
+log
+load 53
+int 0
+>
+bnz mint_45_l7
+int 0
+store 55
+int 0
+store 54
+b mint_45_l13
+mint_45_l7:
+load 52
+load 53
+mulw
+int 0
+byte "rate_precision"
+app_global_get
+divmodw
+pop
+pop
+swap
+!
+assert
+int 1
++
+store 54
+int 2
+byte "asa_id"
+app_global_get
+callsub validateasapaymentafter_29
+store 55
+load 54
+load 55
+<=
+!
+bz mint_45_l13
+byte "ERR RATE"
+log
+err
+mint_45_l9:
+int 0
+b mint_45_l5
+mint_45_l10:
+byte "ERR NP"
+log
+err
+mint_45_l11:
+byte "ERR MAX"
+log
+err
+mint_45_l12:
+byte "ERR !RDY"
+log
+err
+mint_45_l13:
+byte 0x5d77c203
+load 52
+itob
+concat
+load 54
+itob
+concat
+load 55
+itob
+concat
+log
+byte 0x3f235ee1
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 57
+load 55
++
+itob
+concat
+log
+byte "staked"
+load 52
+byte "staked"
+app_global_get
++
+app_global_put
+txn Sender
+byte "lst_id"
+app_global_get
+load 52
+int 0
+callsub sendasa_3
+retsub
+
+// redeem
+redeem_46:
+proto 0 0
+byte "lst_id"
+app_global_get
+int 0
+!=
+!
+bz redeem_46_l2
+byte "ERR !RDY"
+log
+err
+redeem_46_l2:
+callsub premintorredeem_13
+pop
+txn Sender
+int 1
+byte "lst_id"
+app_global_get
+callsub validateasapaymentbefore_30
+int 0
+callsub internalredeem_41
+retsub
+
+// get_rate
+getrate_47:
+proto 0 1
+int 0
+byte "lst_id"
+app_global_get
+int 0
+!=
+!
+bnz getrate_47_l6
+callsub premintorredeem_13
+pop
+load 255
+int 255255255
+==
+!
+bnz getrate_47_l5
+byte "staked"
+app_global_get
+int 0
+==
+bnz getrate_47_l4
+byte "rate_precision"
+app_global_get
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 58
+mulw
+int 0
+byte "staked"
+app_global_get
+divmodw
+pop
+pop
+swap
+!
+assert
+b getrate_47_l7
+getrate_47_l4:
+int 0
+b getrate_47_l7
+getrate_47_l5:
+byte "ERR NP"
+log
+err
+getrate_47_l6:
+byte "ERR !RDY"
+log
+err
+getrate_47_l7:
+frame_bury 0
+retsub
+
+// get_contract_listing
+getcontractlisting_48:
+proto 1 1
+byte ""
+int 0
+dupn 4
+byte ""
+int 0
+byte ""
+dup
+int 0
+dupn 7
+byte ""
+dup
+byte "lst_id"
+app_global_get
+int 0
+!=
+!
+bnz getcontractlisting_48_l9
+byte "lst_id"
+app_global_get
+asset_params_get AssetName
+store 60
+store 59
+byte "asa_id"
+app_global_get
+asset_params_get AssetName
+store 62
+store 61
+byte "asa_id"
+app_global_get
+asset_params_get AssetUnitName
+store 64
+store 63
+byte "asa_id"
+app_global_get
+asset_params_get AssetDecimals
+store 66
+store 65
+global CurrentApplicationAddress
+acct_params_get AcctIncentiveEligible
+store 68
+store 67
+global CurrentApplicationAddress
+voter_params_get VoterIncentiveEligible
+store 70
+store 69
+global CurrentApplicationAddress
+balance
+frame_bury 2
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 71
+frame_bury 3
+byte "staked"
+app_global_get
+frame_bury 4
+byte "lst_id"
+app_global_get
+frame_bury 5
+load 59
+frame_bury 6
+frame_dig 6
+len
+itob
+extract 6 0
+frame_dig 6
+concat
+frame_bury 6
+byte "asa_id"
+app_global_get
+frame_bury 7
+load 61
+frame_bury 8
+frame_dig 8
+len
+itob
+extract 6 0
+frame_dig 8
+concat
+frame_bury 8
+load 63
+frame_bury 9
+frame_dig 9
+len
+itob
+extract 6 0
+frame_dig 9
+concat
+frame_bury 9
+load 65
+frame_bury 10
+frame_dig 10
+int 65536
+<
+assert
+callsub premintorredeem_13
+!
+!
+frame_bury 11
+load 255
+int 255255255
+==
+!
+bnz getcontractlisting_48_l8
+byte "staked"
+app_global_get
+int 0
+==
+bnz getcontractlisting_48_l7
+byte "rate_precision"
+app_global_get
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 72
+mulw
+int 0
+byte "staked"
+app_global_get
+divmodw
+pop
+pop
+swap
+!
+assert
+getcontractlisting_48_l4:
+frame_bury 1
+load 67
+!
+!
+frame_bury 12
+load 70
+!
+!
+frame_bury 13
+byte "contract_upgrade"
+app_global_get
+byte ""
+!=
+!
+!
+frame_bury 14
+frame_dig -1
+box_len
+store 74
+store 73
+load 74
+bnz getcontractlisting_48_l6
+int 0
+b getcontractlisting_48_l10
+getcontractlisting_48_l6:
+frame_dig -1
+callsub getuserprotestingstake_42
+b getcontractlisting_48_l10
+getcontractlisting_48_l7:
+int 0
+b getcontractlisting_48_l4
+getcontractlisting_48_l8:
+byte "ERR NP"
+log
+err
+getcontractlisting_48_l9:
+byte "ERR !RDY"
+log
+err
+getcontractlisting_48_l10:
+frame_bury 15
+frame_dig 1
+itob
+frame_dig 2
+itob
+concat
+frame_dig 3
+itob
+concat
+frame_dig 4
+itob
+concat
+frame_dig 5
+itob
+concat
+frame_dig 6
+frame_bury 19
+frame_dig 19
+frame_bury 18
+int 65
+frame_bury 16
+frame_dig 16
+frame_dig 19
+len
++
+frame_bury 17
+frame_dig 17
+int 65536
+<
+assert
+frame_dig 16
+itob
+extract 6 0
+concat
+frame_dig 7
+itob
+concat
+frame_dig 8
+frame_bury 19
+frame_dig 18
+frame_dig 19
+concat
+frame_bury 18
+frame_dig 17
+frame_bury 16
+frame_dig 16
+frame_dig 19
+len
++
+frame_bury 17
+frame_dig 17
+int 65536
+<
+assert
+frame_dig 16
+itob
+extract 6 0
+concat
+frame_dig 9
+frame_bury 19
+frame_dig 18
+frame_dig 19
+concat
+frame_bury 18
+frame_dig 17
+frame_bury 16
+frame_dig 16
+itob
+extract 6 0
+concat
+frame_dig 10
+itob
+extract 6 0
+concat
+byte 0x00
+int 0
+frame_dig 11
+setbit
+int 1
+frame_dig 12
+setbit
+int 2
+frame_dig 13
+setbit
+int 3
+frame_dig 14
+setbit
+concat
+frame_dig 15
+itob
+concat
+frame_dig 18
+concat
+frame_bury 0
+retsub
+
+// get_rate_and_balances
+getrateandbalances_49:
+proto 0 1
+byte ""
+int 0
+dupn 4
+byte ""
+dup
+byte "lst_id"
+app_global_get
+int 0
+!=
+!
+bnz getrateandbalances_49_l6
+callsub premintorredeem_13
+pop
+load 255
+int 255255255
+==
+!
+bnz getrateandbalances_49_l5
+byte "staked"
+app_global_get
+int 0
+==
+bnz getrateandbalances_49_l4
+byte "rate_precision"
+app_global_get
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 75
+mulw
+int 0
+byte "staked"
+app_global_get
+divmodw
+pop
+pop
+swap
+!
+assert
+b getrateandbalances_49_l7
+getrateandbalances_49_l4:
+int 0
+b getrateandbalances_49_l7
+getrateandbalances_49_l5:
+byte "ERR NP"
+log
+err
+getrateandbalances_49_l6:
+byte "ERR !RDY"
+log
+err
+getrateandbalances_49_l7:
+frame_bury 1
+global CurrentApplicationAddress
+balance
+frame_bury 2
+global CurrentApplicationAddress
+byte "asa_id"
+app_global_get
+asset_holding_get AssetBalance
+store 76
+frame_bury 3
+frame_dig 1
+itob
+frame_dig 2
+itob
+concat
+frame_dig 3
+itob
+concat
+frame_bury 0
+retsub
+
+// get_need_swap
+getneedswap_50:
+proto 0 1
+int 0
+byte "lst_id"
+app_global_get
+int 0
+!=
+!
+bz getneedswap_50_l2
+byte "ERR !RDY"
+log
+err
+getneedswap_50_l2:
+byte "delay_optin"
+app_global_get
+int 0
+==
+global CurrentApplicationAddress
+balance
+global PayoutsMinBalance
+>
+||
+byte "staked"
+app_global_get
+int 0
+>
+&&
+callsub getactualexpectedbalancedelta_17
+global MinTxnFee
+int 1000
+*
+>
+&&
+!
+!
+frame_bury 0
+retsub
+
+// swap_or_fail
+swaporfail_51:
+proto 0 0
+byte "lst_id"
+app_global_get
+int 0
+!=
+!
+bnz swaporfail_51_l5
+callsub maybeapplyfeeupdate_9
+callsub maybeoptin_15
+byte "delay_optin"
+app_global_get
+int 0
+==
+global CurrentApplicationAddress
+balance
+global PayoutsMinBalance
+>
+||
+byte "staked"
+app_global_get
+int 0
+>
+&&
+callsub getactualexpectedbalancedelta_17
+global MinTxnFee
+int 1000
+*
+>
+&&
+!
+bnz swaporfail_51_l4
+callsub swap_14
+!
+bz swaporfail_51_l6
+byte "ERR SWP"
+log
+err
+swaporfail_51_l4:
+byte "ERR NO SWP"
+log
+err
+swaporfail_51_l5:
+byte "ERR !RDY"
+log
+err
+swaporfail_51_l6:
+retsub
+
+// nullun
+nullun_52:
+proto 0 0
+int 1
+return
+
+// queue_update_fees_caster
+queueupdatefeescaster_53:
+proto 0 0
+int 0
+dupn 2
+txna ApplicationArgs 1
+btoi
+frame_bury 1
+txna ApplicationArgs 2
+btoi
+frame_bury 2
+frame_dig 1
+frame_dig 2
+callsub queueupdatefees_11
+frame_bury 0
+byte 0x151f7c75
+frame_dig 0
+itob
+concat
+log
+retsub
+
+// reset_update_fees_caster
+resetupdatefeescaster_54:
+proto 0 0
+callsub resetupdatefees_12
+retsub
+
+// configure_caster
+configurecaster_55:
+proto 0 0
+int 0
+byte ""
+dup
+int 0
+dup
+byte ""
+dupn 2
+int 0
+dupn 7
+byte ""
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+txna ApplicationArgs 2
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+txna ApplicationArgs 4
+btoi
+frame_bury 3
+txna ApplicationArgs 5
+btoi
+frame_bury 4
+txna ApplicationArgs 6
+frame_bury 5
+txna ApplicationArgs 7
+frame_bury 6
+txna ApplicationArgs 8
+frame_bury 7
+txna ApplicationArgs 9
+int 0
+int 8
+*
+getbit
+frame_bury 8
+txna ApplicationArgs 10
+btoi
+frame_bury 9
+txna ApplicationArgs 11
+btoi
+frame_bury 10
+txna ApplicationArgs 12
+btoi
+frame_bury 11
+txna ApplicationArgs 13
+btoi
+frame_bury 12
+txna ApplicationArgs 14
+btoi
+frame_bury 13
+txna ApplicationArgs 15
+frame_bury 16
+frame_dig 16
+int 0
+extract_uint64
+frame_bury 14
+frame_dig 16
+int 8
+extract_uint64
+frame_bury 15
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+frame_dig 4
+frame_dig 5
+frame_dig 6
+frame_dig 7
+frame_dig 8
+frame_dig 9
+frame_dig 10
+frame_dig 11
+frame_dig 12
+frame_dig 13
+frame_dig 14
+frame_dig 15
+callsub configure_18
+retsub
+
+// configure2_caster
+configure2caster_56:
+proto 0 0
+byte ""
+dupn 2
+txna ApplicationArgs 1
+frame_bury 0
+txna ApplicationArgs 2
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+frame_dig 0
+frame_dig 1
+frame_dig 2
+callsub configure2_19
+retsub
+
+// change_admin_1_caster
+changeadmin1caster_57:
+proto 0 0
+byte ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub changeadmin1_20
+retsub
+
+// change_admin_2_caster
+changeadmin2caster_58:
+proto 0 0
+callsub changeadmin2_21
+retsub
+
+// change_noderunner_caster
+changenoderunnercaster_59:
+proto 0 0
+byte ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub changenoderunner_22
+retsub
+
+// change_feeaddr_caster
+changefeeaddrcaster_60:
+proto 0 0
+byte ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub changefeeaddr_23
+retsub
+
+// update_max_balance_caster
+updatemaxbalancecaster_61:
+proto 0 0
+int 0
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+frame_dig 0
+callsub updatemaxbalance_24
+retsub
+
+// withdraw_ds_surplus_caster
+withdrawdssurpluscaster_62:
+proto 0 0
+callsub withdrawdssurplus_25
+retsub
+
+// verify_nfdomains_caster
+verifynfdomainscaster_63:
+proto 0 0
+int 0
+dup
+byte ""
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+txna ApplicationArgs 2
+btoi
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+frame_dig 0
+frame_dig 1
+frame_dig 2
+callsub verifynfdomains_26
+retsub
+
+// withdraw_node_runner_fees_caster
+withdrawnoderunnerfeescaster_64:
+proto 0 0
+int 0
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+frame_dig 0
+callsub withdrawnoderunnerfees_27
+retsub
+
+// withdraw_platform_fees_caster
+withdrawplatformfeescaster_65:
+proto 0 0
+int 0
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+frame_dig 0
+callsub withdrawplatformfees_28
+retsub
+
+// keyreg_online_caster
+keyregonlinecaster_66:
+proto 0 0
+byte ""
+dupn 2
+int 0
+dupn 3
+txna ApplicationArgs 1
+frame_bury 0
+txna ApplicationArgs 2
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+txna ApplicationArgs 4
+btoi
+frame_bury 3
+txna ApplicationArgs 5
+btoi
+frame_bury 4
+txna ApplicationArgs 6
+btoi
+frame_bury 5
+txna ApplicationArgs 7
+btoi
+frame_bury 6
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+frame_dig 4
+frame_dig 5
+frame_dig 6
+callsub keyregonline_32
+retsub
+
+// keyreg_offline_caster
+keyregofflinecaster_67:
+proto 0 0
+callsub keyregoffline_33
+retsub
+
+// protest_stake_caster
+proteststakecaster_68:
+proto 0 0
+callsub proteststake_35
+retsub
+
+// unprotest_stake_caster
+unproteststakecaster_69:
+proto 0 0
+callsub unproteststake_36
+retsub
+
+// admin_unprotest_stake_caster
+adminunproteststakecaster_70:
+proto 0 0
+byte ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub adminunproteststake_37
+retsub
+
+// dissolve_protesting_stake_caster
+dissolveprotestingstakecaster_71:
+proto 0 0
+byte ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub dissolveprotestingstake_38
+retsub
+
+// queue_upgrade_caster
+queueupgradecaster_72:
+proto 0 0
+byte ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub queueupgrade_43
+retsub
+
+// reset_upgrade_caster
+resetupgradecaster_73:
+proto 0 0
+callsub resetupgrade_44
+retsub
+
+// mint_caster
+mintcaster_74:
+proto 0 0
+callsub mint_45
+retsub
+
+// redeem_caster
+redeemcaster_75:
+proto 0 0
+callsub redeem_46
+retsub
+
+// get_rate_caster
+getratecaster_76:
+proto 0 0
+int 0
+callsub getrate_47
+frame_bury 0
+byte 0x151f7c75
+frame_dig 0
+itob
+concat
+log
+retsub
+
+// get_contract_listing_caster
+getcontractlistingcaster_77:
+proto 0 0
+byte ""
+dup
+txna ApplicationArgs 1
+frame_bury 1
+frame_dig 1
+callsub getcontractlisting_48
+frame_bury 0
+byte 0x151f7c75
+frame_dig 0
+concat
+log
+retsub
+
+// get_rate_and_balances_caster
+getrateandbalancescaster_78:
+proto 0 0
+byte ""
+callsub getrateandbalances_49
+frame_bury 0
+byte 0x151f7c75
+frame_dig 0
+concat
+log
+retsub
+
+// get_need_swap_caster
+getneedswapcaster_79:
+proto 0 0
+int 0
+callsub getneedswap_50
+frame_bury 0
+byte 0x151f7c75
+byte 0x00
+int 0
+frame_dig 0
+setbit
+concat
+log
+retsub
+
+// swap_or_fail_caster
+swaporfailcaster_80:
+proto 0 0
+callsub swaporfail_51
+retsub
+
+// nullun_caster
+nulluncaster_81:
+proto 0 0
+callsub nullun_52
+retsub
