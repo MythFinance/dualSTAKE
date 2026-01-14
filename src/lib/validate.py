@@ -9,8 +9,8 @@ from pyteal import (
     Txn,
     TxnType,
 )
-from lib.err import err_invalid_asset_id, err_min_payment, err_payment_validation_failed
-from lib.utils import custom_assert
+from .err import err_invalid_asset_id, err_min_payment, err_payment_validation_failed
+from .utils import custom_assert
 
 
 def _validate_asa_payment(transaction, asset_id):

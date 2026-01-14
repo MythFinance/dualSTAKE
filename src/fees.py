@@ -1,10 +1,10 @@
 from pyteal import Int, Seq, Txn, abi
-from lib.decorators import fee_admin_only, fee_admin_or_node_runner_only
-from lib.err import err_over, err_zero
-from lib.storage import gget, global_decr
-from lib.str import str_noderunner_addr, str_noderunner_fees, str_platform_fees
-from lib.utils import custom_assert, send_algo
-from router import router
+from .lib.decorators import fee_admin_only, fee_admin_or_node_runner_only
+from .lib.err import err_over, err_zero
+from .lib.storage import gget, global_decr
+from .lib.str import str_noderunner_addr, str_noderunner_fees, str_platform_fees
+from .lib.utils import custom_assert, send_algo
+from .router import router
 
 
 @router.method

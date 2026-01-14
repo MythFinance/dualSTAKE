@@ -18,10 +18,10 @@ from pyteal import (
     TxnType,
     abi,
 )
-from lib.storage import gget
-from lib.str import str_arc59_app_id
-from lib.utils import custom_assert, is_opted_in, send_algo, send_asa
-from lib.err import err_fees
+from .storage import gget
+from .str import str_arc59_app_id
+from .utils import custom_assert, is_opted_in, send_algo, send_asa
+from .err import err_fees
 
 # extra_fields{} for different fee structures
 double_fee_extra_fields={}

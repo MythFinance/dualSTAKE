@@ -25,13 +25,13 @@ from pyteal import (
     TxnType,
     abi,
 )
-from lib.decorators import (
+from .lib.decorators import (
     admin_only,
     admin_or_fee_admin_only,
     fee_admin_or_node_runner_only,
     fee_admin_only,
 )
-from lib.err import (
+from .lib.err import (
     err_configured,
     err_unauthorized,
     err_max_stake_exceeded,
@@ -45,9 +45,9 @@ from lib.err import (
     err_arc59_hash,
     err_zero
 )
-from lib.rate import pre_mint_or_redeem
-from lib.storage import gget, gset
-from lib.str import (
+from .lib.rate import pre_mint_or_redeem
+from .lib.storage import gget, gset
+from .lib.str import (
     str_admin_addr,
     str_arc59_app_id,
     str_asa_id,
@@ -69,8 +69,8 @@ from lib.str import (
     str_tm2_app_id,
     str_upgrade_period,
 )
-from lib.utils import create_lst_asset, custom_assert, send_asa, get_asset_balance, get_asset_total_supply
-from router import router
+from .lib.utils import create_lst_asset, custom_assert, send_asa, get_asset_balance, get_asset_total_supply
+from .router import router
 
 
 @router.method

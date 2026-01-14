@@ -9,13 +9,13 @@ from pyteal import (
     TxnType,
     abi,
 )
-from lib.decorators import fee_admin_or_node_runner_only
-from lib.err import err_ie, err_not_ie, err_payment_amount_failed
-from lib.events import emit_event
-from lib.str import byte_zero, byte_one
-from lib.utils import custom_assert
-from lib.validate import validate_algo_payment_after
-from router import router
+from .lib.decorators import fee_admin_or_node_runner_only
+from .lib.err import err_ie, err_not_ie, err_payment_amount_failed
+from .lib.events import emit_event
+from .lib.str import byte_zero, byte_one
+from .lib.utils import custom_assert
+from .lib.validate import validate_algo_payment_after
+from .router import router
 
 
 @router.method

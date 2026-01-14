@@ -6,12 +6,12 @@ from pyteal import (
     Seq,
     abi,
 )
-from lib.decorators import admin_only, admin_or_fee_admin_only
-from lib.err import err_hash_len, err_no_contract_upgrade
-from lib.storage import gget, gset
-from lib.str import bytes_empty, str_contract_upgrade, str_upgrade_period
-from lib.utils import custom_assert, latest_timestamp_plus_uint32
-from router import router
+from .lib.decorators import admin_only, admin_or_fee_admin_only
+from .lib.err import err_hash_len, err_no_contract_upgrade
+from .lib.storage import gget, gset
+from .lib.str import bytes_empty, str_contract_upgrade, str_upgrade_period
+from .lib.utils import custom_assert, latest_timestamp_plus_uint32
+from .router import router
 
 ## Upgrading with time-block to a pre-declared version only
 #

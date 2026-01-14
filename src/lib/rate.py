@@ -14,10 +14,10 @@ from pyteal import (
     TealType,
     WideRatio,
 )
-from fee_update import maybe_apply_fee_update
-from lib.err import err_not_implemented, err_no_pre
-from lib.storage import gget, global_incr, gset
-from lib.str import (
+from ..fee_update import maybe_apply_fee_update
+from .err import err_not_implemented, err_no_pre
+from .storage import gget, global_incr, gset
+from .str import (
     str_asa_id,
     str_delay_optin,
     str_lp_type,
@@ -28,8 +28,8 @@ from lib.str import (
     str_rate_precision,
     str_staked,
 )
-from lib.swap import swap_tm2_algo_asa
-from lib.utils import custom_assert, fail, get_asset_balance, send_asa
+from .swap import swap_tm2_algo_asa
+from .utils import custom_assert, fail, get_asset_balance, send_asa
 
 swap_enforced = ScratchVar(TealType.uint64, 255)
 swap_enforced_magic_value = Int(255255255)

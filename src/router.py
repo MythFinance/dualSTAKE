@@ -1,7 +1,7 @@
 from pyteal import Router, Reject, OnCompleteAction, BareCallActions
-from lib.create import create_storage
-from lib.upgrade_apply import process_upgrade
-from delete import delete_app
+from .lib.create import create_storage
+from .lib.upgrade_apply import process_upgrade
+from .delete import delete_app
 
 # Main router class
 router = Router(

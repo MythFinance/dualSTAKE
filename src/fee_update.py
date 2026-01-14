@@ -12,11 +12,11 @@ from pyteal import (
     TealType,
     abi,
 )
-from lib.decorators import fee_admin_only
-from lib.err import err_delta_platform_fees, err_delta_noderunner_fees, err_no_update
-from lib.events import emit_event
-from lib.storage import gget, gset
-from lib.str import (
+from .lib.decorators import fee_admin_only
+from .lib.err import err_delta_platform_fees, err_delta_noderunner_fees, err_no_update
+from .lib.events import emit_event
+from .lib.storage import gget, gset
+from .lib.str import (
     bytes_empty,
     str_fee_update,
     str_noderunner_fee_bps,
@@ -24,8 +24,8 @@ from lib.str import (
     str_fee_update_max_delta,
     str_fee_update_period,
 )
-from lib.utils import abs_diff, custom_assert
-from router import router
+from .lib.utils import abs_diff, custom_assert
+from .router import router
 
 ## Time locked, delta constrained fee updates (node runner, platform)
 

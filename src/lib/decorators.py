@@ -9,10 +9,10 @@ from pyteal import (
     Txn,
 )
 
-from lib.err import err_unauthorized, err_not_ready
-from lib.storage import gget
-from lib.str import str_admin_addr, str_fee_addr, str_lst_id, str_noderunner_addr
-from lib.utils import custom_assert
+from .err import err_unauthorized, err_not_ready
+from .storage import gget
+from .str import str_admin_addr, str_fee_addr, str_lst_id, str_noderunner_addr
+from .utils import custom_assert
 
 
 #

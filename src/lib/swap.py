@@ -16,11 +16,11 @@ from pyteal import (
     TxnType,
     WideRatio,
 )
-from lib.err import err_lp
-from lib.events import emit_event
-from lib.storage import gget
-from lib.str import str_asa_id, str_lp_id, str_tm2_app_id
-from lib.utils import custom_assert, get_asset_balance
+from .err import err_lp
+from .events import emit_event
+from .storage import gget
+from .str import str_asa_id, str_lp_id, str_tm2_app_id
+from .utils import custom_assert, get_asset_balance
 
 
 def swap_tm2_algo_asa(swap_amt):

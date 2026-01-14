@@ -16,20 +16,20 @@ from pyteal import (
     WideRatio,
     abi,
 )
-from admin import (
+from .admin import (
     change_admin_1,
     change_admin_2,
     change_feeaddr,
     change_noderunner,
     configure,
 )
-from fee_update import maybe_apply_fee_update, queue_update_fees, reset_update_fees
-from fees import withdraw_node_runner_fees, withdraw_platform_fees
-from keyreg import keyreg_offline, keyreg_online
-from lib.decorators import ready
-from lib.events import emit_event
-from lib.err import err_max_stake_exceeded, err_asa_rate, err_no_swap, err_swap_fail
-from lib.rate import (
+from .fee_update import maybe_apply_fee_update, queue_update_fees, reset_update_fees
+from .fees import withdraw_node_runner_fees, withdraw_platform_fees
+from .keyreg import keyreg_offline, keyreg_online
+from .lib.decorators import ready
+from .lib.events import emit_event
+from .lib.err import err_max_stake_exceeded, err_asa_rate, err_no_swap, err_swap_fail
+from .lib.rate import (
     _get_rate,
     get_asset_balance,
     maybe_optin,
@@ -37,8 +37,8 @@ from lib.rate import (
     pre_mint_or_redeem,
     swap,
 )
-from lib.storage import gget, global_incr
-from lib.str import (
+from .lib.storage import gget, global_incr
+from .lib.str import (
     bytes_empty,
     str_asa_id,
     str_contract_upgrade,
@@ -47,13 +47,13 @@ from lib.str import (
     str_rate_precision,
     str_staked,
 )
-from lib.utils import custom_assert, send_asa
-from lib.validate import (
+from .lib.utils import custom_assert, send_asa
+from .lib.validate import (
     validate_algo_payment_after,
     validate_asa_payment_after,
     validate_asa_payment_before,
 )
-from redeem_protest import (
+from .redeem_protest import (
     admin_unprotest_stake,
     dissolve_protesting_stake,
     internal_redeem,
@@ -62,8 +62,8 @@ from redeem_protest import (
     is_user_protesting,
     get_user_protesting_stake,
 )
-from router import router
-from upgrade import queue_upgrade, reset_upgrade
+from .router import router
+from .upgrade import queue_upgrade, reset_upgrade
 
 # Listing ABI methods here so they are not marked as unused variables...
 withdraw_node_runner_fees

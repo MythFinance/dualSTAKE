@@ -5,11 +5,11 @@ from pyteal import (
     Seq,
     Txn,
 )
-from lib.decorators import admin_only
-from lib.err import err_stake_exists, err_noderunner_fees_exists
-from lib.storage import gget
-from lib.str import str_asa_id, str_noderunner_fees, str_staked
-from lib.utils import closeout_algo, closeout_asa, custom_assert, delete_lst_asset, is_opted_in
+from .lib.decorators import admin_only
+from .lib.err import err_stake_exists, err_noderunner_fees_exists
+from .lib.storage import gget
+from .lib.str import str_asa_id, str_noderunner_fees, str_staked
+from .lib.utils import closeout_algo, closeout_asa, custom_assert, delete_lst_asset, is_opted_in
 
 
 @admin_only

@@ -1,7 +1,7 @@
 from pyteal import Int, Seq, Subroutine, TealType, Txn
-from lib.err import err_inited
-from lib.storage import gget, gset
-from lib.str import (
+from .err import err_inited
+from .storage import gget, gset
+from .str import (
     bytes_empty,
     str_admin_addr,
     str_arc59_app_id,
@@ -29,7 +29,7 @@ from lib.str import (
     str_upgrade_period,
     str_version,
 )
-from lib.utils import custom_assert
+from .utils import custom_assert
 
 
 @Subroutine(TealType.none)

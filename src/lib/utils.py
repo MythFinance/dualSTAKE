@@ -22,8 +22,8 @@ from pyteal import (
     TxnField,
     TxnType,
 )
-from lib.storage import gget
-from lib.str import bytes_numbers, str_contract_upgrade, str_lst_id
+from .storage import gget
+from .str import bytes_numbers, str_contract_upgrade, str_lst_id
 
 
 # assert that fails with an error string attached

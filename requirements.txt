@@ -1,0 +1,5 @@
+pyteal @ git+https://github.com/MythFinance/pyteal@68d9187987298242c1bce5bb63507bde8fb3c81a
+py-algorand-sdk==2.2.0
+mypy==0.910
+pytest
+black==21.7b0

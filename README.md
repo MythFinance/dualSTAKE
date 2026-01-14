@@ -1,6 +1,8 @@
 # dualSTAKE Contract
 
-Entry point is `sc.py`
+[![Build Artifacts & Hashes](https://github.com/d13co/mf-contracts-test/actions/workflows/build.yml/badge.svg)](https://github.com/d13co/mf-contracts-test/actions/workflows/build.yml)
+
+Entry point is `src/sc.py`
 
 Decorators are used for access control
 

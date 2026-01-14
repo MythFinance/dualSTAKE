@@ -14,9 +14,9 @@ from pyteal import (
     WideRatio,
     abi,
 )
-from lib.arc59 import send_algo_and_asa
-from lib.decorators import fee_admin_only
-from lib.err import (
+from .lib.arc59 import send_algo_and_asa
+from .lib.decorators import fee_admin_only
+from .lib.err import (
     err_zero,
     err_early,
     err_box_del,
@@ -25,10 +25,10 @@ from lib.err import (
     err_min_protest,
     err_no_protest,
 )
-from lib.events import emit_event
-from lib.rate import _get_rate, pre_mint_or_redeem
-from lib.storage import gget, global_decr, global_incr
-from lib.str import (
+from .lib.events import emit_event
+from .lib.rate import _get_rate, pre_mint_or_redeem
+from .lib.storage import gget, global_decr, global_incr
+from .lib.str import (
     bytes_empty,
     byte_zero,
     byte_one,
@@ -40,9 +40,9 @@ from lib.str import (
     str_rate_precision,
     str_staked,
 )
-from lib.utils import custom_assert, get_asset_balance, get_upgrade_maturity_ts, send_algo, send_asa
-from lib.validate import validate_asa_payment_before
-from router import router
+from .lib.utils import custom_assert, get_asset_balance, get_upgrade_maturity_ts, send_algo, send_asa
+from .lib.validate import validate_asa_payment_before
+from .router import router
 
 
 @router.method

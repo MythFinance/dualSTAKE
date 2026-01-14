@@ -12,12 +12,12 @@ from pyteal import (
     TealType,
     Txn,
 )
-from lib.decorators import admin_or_fee_admin_only
-from lib.events import emit_event
-from lib.storage import gget, gset
-from lib.str import bytes_empty, str_contract_upgrade, str_protest_sum
-from lib.utils import custom_assert, get_upgrade_maturity_ts
-from lib.err import err_early, err_hash, err_no_upgrade, err_size, err_protest
+from .decorators import admin_or_fee_admin_only
+from .events import emit_event
+from .storage import gget, gset
+from .str import bytes_empty, str_contract_upgrade, str_protest_sum
+from .utils import custom_assert, get_upgrade_maturity_ts
+from .err import err_early, err_hash, err_no_upgrade, err_size, err_protest
 
 
 @admin_or_fee_admin_only
