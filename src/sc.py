@@ -121,7 +121,7 @@ def mint():
                 WideRatio(
                     [amount.load(), rate.load()],
                     [gget(str_rate_precision)],
-                ) + Int(1)
+                )
             ),
             # WARNING Intentionally using after-positioning for the asa payment
             # Currently nothing else expects an ASA payments at (previous position)
@@ -179,7 +179,7 @@ def redeem():
 def get_rate(*, output: abi.Uint64):
     """
     Public method. Returns the current rate as ABI uint64:
-        (rate_precision global var, default 1e10) * (ASA Balance) / (global staked)
+        1e8 * (ASA Balance) / (global staked)
     Returns zero if staked == 0
     will swap and apply fee updates if needed
     """

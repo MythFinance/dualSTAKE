@@ -2,124 +2,132 @@
 txn NumAppArgs
 int 0
 ==
-bnz main_l60
+bnz main_l58
 txna ApplicationArgs 0
 method "queue_update_fees(uint64,uint64)uint64"
 ==
-bnz main_l59
+bnz main_l57
 txna ApplicationArgs 0
 method "reset_update_fees()void"
 ==
-bnz main_l58
+bnz main_l56
 txna ApplicationArgs 0
 method "configure(uint64,byte[],byte[],uint64,uint64,address,address,address,bool,uint64,uint64,uint64,uint64,uint64,uint64,uint64)void"
 ==
-bnz main_l57
+bnz main_l55
 txna ApplicationArgs 0
 method "configure2(byte[],byte[],byte[])void"
 ==
-bnz main_l56
+bnz main_l54
 txna ApplicationArgs 0
 method "change_admin_1(address)void"
 ==
-bnz main_l55
+bnz main_l53
 txna ApplicationArgs 0
 method "change_admin_2()void"
 ==
-bnz main_l54
+bnz main_l52
 txna ApplicationArgs 0
 method "change_noderunner(address)void"
 ==
-bnz main_l53
+bnz main_l51
 txna ApplicationArgs 0
 method "change_feeaddr(address)void"
 ==
-bnz main_l52
+bnz main_l50
 txna ApplicationArgs 0
 method "update_max_balance(uint64)void"
 ==
-bnz main_l51
-txna ApplicationArgs 0
-method "withdraw_ds_surplus()void"
-==
-bnz main_l50
+bnz main_l49
 txna ApplicationArgs 0
 method "verify_nfdomains(uint64,uint64,byte[])void"
 ==
-bnz main_l49
+bnz main_l48
 txna ApplicationArgs 0
 method "withdraw_node_runner_fees(uint64)void"
 ==
-bnz main_l48
+bnz main_l47
 txna ApplicationArgs 0
 method "withdraw_platform_fees(uint64)void"
 ==
-bnz main_l47
+bnz main_l46
 txna ApplicationArgs 0
 method "keyreg_online(byte[],byte[],byte[],uint64,uint64,uint64,uint64)void"
 ==
-bnz main_l46
+bnz main_l45
 txna ApplicationArgs 0
 method "keyreg_offline()void"
 ==
-bnz main_l45
+bnz main_l44
 txna ApplicationArgs 0
 method "protest_stake()void"
 ==
-bnz main_l44
+bnz main_l43
 txna ApplicationArgs 0
 method "unprotest_stake()void"
 ==
-bnz main_l43
+bnz main_l42
 txna ApplicationArgs 0
 method "admin_unprotest_stake(address)void"
 ==
-bnz main_l42
+bnz main_l41
 txna ApplicationArgs 0
 method "dissolve_protesting_stake(address)void"
 ==
-bnz main_l41
+bnz main_l40
 txna ApplicationArgs 0
 method "queue_upgrade(byte[])void"
 ==
-bnz main_l40
+bnz main_l39
 txna ApplicationArgs 0
 method "reset_upgrade()void"
 ==
-bnz main_l39
+bnz main_l38
 txna ApplicationArgs 0
 method "mint()void"
 ==
-bnz main_l38
+bnz main_l37
 txna ApplicationArgs 0
 method "redeem()void"
 ==
-bnz main_l37
+bnz main_l36
 txna ApplicationArgs 0
 method "get_rate()uint64"
 ==
-bnz main_l36
+bnz main_l35
 txna ApplicationArgs 0
 method "get_contract_listing(address)(uint64,uint64,uint64,uint64,uint64,string,uint64,string,string,uint16,bool,bool,bool,bool,uint64)"
 ==
-bnz main_l35
+bnz main_l34
 txna ApplicationArgs 0
 method "get_rate_and_balances()(uint64,uint64,uint64)"
 ==
-bnz main_l34
+bnz main_l33
 txna ApplicationArgs 0
 method "get_need_swap()bool"
 ==
-bnz main_l33
+bnz main_l32
 txna ApplicationArgs 0
 method "swap_or_fail()void"
 ==
-bnz main_l32
+bnz main_l31
 txna ApplicationArgs 0
 method "nullun()void"
 ==
-bnz main_l31
+bnz main_l30
 err
+main_l30:
+txn OnCompletion
+int NoOp
+==
+txn ApplicationID
+int 0
+!=
+&&
+assert
+callsub nulluncaster_79
+int 1
+return
 main_l31:
 txn OnCompletion
 int NoOp
@@ -129,7 +137,7 @@ int 0
 !=
 &&
 assert
-callsub nulluncaster_81
+callsub swaporfailcaster_78
 int 1
 return
 main_l32:
@@ -141,7 +149,7 @@ int 0
 !=
 &&
 assert
-callsub swaporfailcaster_80
+callsub getneedswapcaster_77
 int 1
 return
 main_l33:
@@ -153,7 +161,7 @@ int 0
 !=
 &&
 assert
-callsub getneedswapcaster_79
+callsub getrateandbalancescaster_76
 int 1
 return
 main_l34:
@@ -165,7 +173,7 @@ int 0
 !=
 &&
 assert
-callsub getrateandbalancescaster_78
+callsub getcontractlistingcaster_75
 int 1
 return
 main_l35:
@@ -177,7 +185,7 @@ int 0
 !=
 &&
 assert
-callsub getcontractlistingcaster_77
+callsub getratecaster_74
 int 1
 return
 main_l36:
@@ -189,7 +197,7 @@ int 0
 !=
 &&
 assert
-callsub getratecaster_76
+callsub redeemcaster_73
 int 1
 return
 main_l37:
@@ -201,7 +209,7 @@ int 0
 !=
 &&
 assert
-callsub redeemcaster_75
+callsub mintcaster_72
 int 1
 return
 main_l38:
@@ -213,7 +221,7 @@ int 0
 !=
 &&
 assert
-callsub mintcaster_74
+callsub resetupgradecaster_71
 int 1
 return
 main_l39:
@@ -225,7 +233,7 @@ int 0
 !=
 &&
 assert
-callsub resetupgradecaster_73
+callsub queueupgradecaster_70
 int 1
 return
 main_l40:
@@ -237,7 +245,7 @@ int 0
 !=
 &&
 assert
-callsub queueupgradecaster_72
+callsub dissolveprotestingstakecaster_69
 int 1
 return
 main_l41:
@@ -249,7 +257,7 @@ int 0
 !=
 &&
 assert
-callsub dissolveprotestingstakecaster_71
+callsub adminunproteststakecaster_68
 int 1
 return
 main_l42:
@@ -261,7 +269,7 @@ int 0
 !=
 &&
 assert
-callsub adminunproteststakecaster_70
+callsub unproteststakecaster_67
 int 1
 return
 main_l43:
@@ -273,7 +281,7 @@ int 0
 !=
 &&
 assert
-callsub unproteststakecaster_69
+callsub proteststakecaster_66
 int 1
 return
 main_l44:
@@ -285,7 +293,7 @@ int 0
 !=
 &&
 assert
-callsub proteststakecaster_68
+callsub keyregofflinecaster_65
 int 1
 return
 main_l45:
@@ -297,7 +305,7 @@ int 0
 !=
 &&
 assert
-callsub keyregofflinecaster_67
+callsub keyregonlinecaster_64
 int 1
 return
 main_l46:
@@ -309,7 +317,7 @@ int 0
 !=
 &&
 assert
-callsub keyregonlinecaster_66
+callsub withdrawplatformfeescaster_63
 int 1
 return
 main_l47:
@@ -321,7 +329,7 @@ int 0
 !=
 &&
 assert
-callsub withdrawplatformfeescaster_65
+callsub withdrawnoderunnerfeescaster_62
 int 1
 return
 main_l48:
@@ -333,7 +341,7 @@ int 0
 !=
 &&
 assert
-callsub withdrawnoderunnerfeescaster_64
+callsub verifynfdomainscaster_61
 int 1
 return
 main_l49:
@@ -345,7 +353,7 @@ int 0
 !=
 &&
 assert
-callsub verifynfdomainscaster_63
+callsub updatemaxbalancecaster_60
 int 1
 return
 main_l50:
@@ -357,7 +365,7 @@ int 0
 !=
 &&
 assert
-callsub withdrawdssurpluscaster_62
+callsub changefeeaddrcaster_59
 int 1
 return
 main_l51:
@@ -369,7 +377,7 @@ int 0
 !=
 &&
 assert
-callsub updatemaxbalancecaster_61
+callsub changenoderunnercaster_58
 int 1
 return
 main_l52:
@@ -381,7 +389,7 @@ int 0
 !=
 &&
 assert
-callsub changefeeaddrcaster_60
+callsub changeadmin2caster_57
 int 1
 return
 main_l53:
@@ -393,7 +401,7 @@ int 0
 !=
 &&
 assert
-callsub changenoderunnercaster_59
+callsub changeadmin1caster_56
 int 1
 return
 main_l54:
@@ -405,7 +413,7 @@ int 0
 !=
 &&
 assert
-callsub changeadmin2caster_58
+callsub configure2caster_55
 int 1
 return
 main_l55:
@@ -417,7 +425,7 @@ int 0
 !=
 &&
 assert
-callsub changeadmin1caster_57
+callsub configurecaster_54
 int 1
 return
 main_l56:
@@ -429,7 +437,7 @@ int 0
 !=
 &&
 assert
-callsub configure2caster_56
+callsub resetupdatefeescaster_53
 int 1
 return
 main_l57:
@@ -441,56 +449,32 @@ int 0
 !=
 &&
 assert
-callsub configurecaster_55
+callsub queueupdatefeescaster_52
 int 1
 return
 main_l58:
 txn OnCompletion
 int NoOp
 ==
-txn ApplicationID
-int 0
-!=
-&&
-assert
-callsub resetupdatefeescaster_54
-int 1
-return
-main_l59:
-txn OnCompletion
-int NoOp
-==
-txn ApplicationID
-int 0
-!=
-&&
-assert
-callsub queueupdatefeescaster_53
-int 1
-return
-main_l60:
-txn OnCompletion
-int NoOp
-==
-bnz main_l89
+bnz main_l87
 txn OnCompletion
 int OptIn
 ==
-bnz main_l88
+bnz main_l86
 txn OnCompletion
 int CloseOut
 ==
-bnz main_l87
+bnz main_l85
 txn OnCompletion
 int UpdateApplication
 ==
-bnz main_l73
+bnz main_l71
 txn OnCompletion
 int DeleteApplication
 ==
-bnz main_l66
+bnz main_l64
 err
-main_l66:
+main_l64:
 txn ApplicationID
 int 0
 !=
@@ -501,13 +485,13 @@ app_global_get
 int 0
 ==
 !
-bnz main_l72
+bnz main_l70
 byte "noderunner_fees"
 app_global_get
 int 0
 ==
 !
-bnz main_l71
+bnz main_l69
 itxn_begin
 int acfg
 itxn_field TypeEnum
@@ -522,8 +506,8 @@ asset_holding_get AssetBalance
 store 3
 store 2
 load 3
-bnz main_l70
-main_l69:
+bnz main_l68
+main_l67:
 itxn_begin
 int pay
 itxn_field TypeEnum
@@ -536,7 +520,7 @@ itxn_field Receiver
 itxn_submit
 int 1
 return
-main_l70:
+main_l68:
 itxn_begin
 int axfer
 itxn_field TypeEnum
@@ -550,16 +534,16 @@ itxn_field AssetCloseTo
 int 0
 itxn_field AssetAmount
 itxn_submit
-b main_l69
-main_l71:
+b main_l67
+main_l69:
 byte "ERR NF"
 log
 err
-main_l72:
+main_l70:
 byte "ERR STK"
 log
 err
-main_l73:
+main_l71:
 txn ApplicationID
 int 0
 !=
@@ -570,7 +554,7 @@ app_global_get
 byte ""
 !=
 !
-bnz main_l86
+bnz main_l84
 byte "contract_upgrade"
 app_global_get
 int 0
@@ -578,13 +562,13 @@ extract_uint32
 global LatestTimestamp
 <
 !
-bnz main_l85
+bnz main_l83
 byte "protest_sum"
 app_global_get
 int 0
 ==
 !
-bnz main_l84
+bnz main_l82
 byte "contract_upgrade"
 app_global_get
 extract 4 0
@@ -607,20 +591,20 @@ int 32
 /
 ==
 !
-bnz main_l83
+bnz main_l81
 int 0
 store 1
-main_l78:
+main_l76:
 load 1
 txn NumApprovalProgramPages
 <
-bnz main_l80
+bnz main_l78
 byte "contract_upgrade"
 byte ""
 app_global_put
 int 1
 return
-main_l80:
+main_l78:
 load 0
 int 32
 load 1
@@ -632,7 +616,7 @@ txnas ApprovalProgramPages
 sha512_256
 ==
 !
-bnz main_l82
+bnz main_l80
 byte 0x2882b40e
 load 1
 itob
@@ -642,34 +626,34 @@ load 1
 int 1
 +
 store 1
-b main_l78
-main_l82:
+b main_l76
+main_l80:
 byte "ERR HASH"
 log
 err
-main_l83:
+main_l81:
 byte "ERR SIZE"
 log
 err
-main_l84:
+main_l82:
 byte "ERR PRTST"
 log
 err
-main_l85:
+main_l83:
 byte "ERR EARLY"
 log
 err
-main_l86:
+main_l84:
 byte "ERR NO UPG"
 log
 err
+main_l85:
+int 0
+return
+main_l86:
+int 0
+return
 main_l87:
-int 0
-return
-main_l88:
-int 0
-return
-main_l89:
 txn ApplicationID
 int 0
 ==
@@ -1702,48 +1686,8 @@ frame_dig -1
 app_global_put
 retsub
 
-// withdraw_ds_surplus
-withdrawdssurplus_25:
-proto 0 0
-callsub assertfeeadmin_5
-byte "lst_id"
-app_global_get
-asset_params_get AssetTotal
-store 28
-byte "staked"
-app_global_get
--
-byte "protest_sum"
-app_global_get
-+
-store 26
-global CurrentApplicationAddress
-byte "lst_id"
-app_global_get
-asset_holding_get AssetBalance
-store 29
-store 27
-load 27
-load 26
->
-!
-bz withdrawdssurplus_25_l2
-byte "ERR ZERO"
-log
-err
-withdrawdssurplus_25_l2:
-txn Sender
-byte "lst_id"
-app_global_get
-load 27
-load 26
--
-int 0
-callsub sendasa_3
-retsub
-
 // verify_nfdomains
-verifynfdomains_26:
+verifynfdomains_25:
 proto 3 0
 callsub assertfeeadmin_5
 itxn_begin
@@ -1773,28 +1717,28 @@ itxn_submit
 retsub
 
 // withdraw_node_runner_fees
-withdrawnoderunnerfees_27:
+withdrawnoderunnerfees_26:
 proto 1 0
 callsub assertfeeadminornoderunner_7
 frame_dig -1
 int 0
 >
 !
-bnz withdrawnoderunnerfees_27_l3
+bnz withdrawnoderunnerfees_26_l3
 frame_dig -1
 byte "noderunner_fees"
 app_global_get
 <=
 !
-bz withdrawnoderunnerfees_27_l4
+bz withdrawnoderunnerfees_26_l4
 byte "ERR OVER"
 log
 err
-withdrawnoderunnerfees_27_l3:
+withdrawnoderunnerfees_26_l3:
 byte "ERR ZERO"
 log
 err
-withdrawnoderunnerfees_27_l4:
+withdrawnoderunnerfees_26_l4:
 byte "noderunner_addr"
 app_global_get
 frame_dig -1
@@ -1809,28 +1753,28 @@ app_global_put
 retsub
 
 // withdraw_platform_fees
-withdrawplatformfees_28:
+withdrawplatformfees_27:
 proto 1 0
 callsub assertfeeadmin_5
 frame_dig -1
 int 0
 >
 !
-bnz withdrawplatformfees_28_l3
+bnz withdrawplatformfees_27_l3
 frame_dig -1
 byte "platform_fees"
 app_global_get
 <=
 !
-bz withdrawplatformfees_28_l4
+bz withdrawplatformfees_27_l4
 byte "ERR OVER"
 log
 err
-withdrawplatformfees_28_l3:
+withdrawplatformfees_27_l3:
 byte "ERR ZERO"
 log
 err
-withdrawplatformfees_28_l4:
+withdrawplatformfees_27_l4:
 txn Sender
 frame_dig -1
 int 0
@@ -1844,7 +1788,7 @@ app_global_put
 retsub
 
 // validate_asa_payment_after
-validateasapaymentafter_29:
+validateasapaymentafter_28:
 proto 2 1
 txn GroupIndex
 frame_dig -2
@@ -1853,7 +1797,7 @@ gtxns TypeEnum
 int axfer
 ==
 !
-bnz validateasapaymentafter_29_l5
+bnz validateasapaymentafter_28_l5
 txn GroupIndex
 frame_dig -2
 +
@@ -1861,7 +1805,7 @@ gtxns AssetReceiver
 global CurrentApplicationAddress
 ==
 !
-bnz validateasapaymentafter_29_l4
+bnz validateasapaymentafter_28_l4
 txn GroupIndex
 frame_dig -2
 +
@@ -1869,19 +1813,19 @@ gtxns XferAsset
 frame_dig -1
 ==
 !
-bz validateasapaymentafter_29_l6
+bz validateasapaymentafter_28_l6
 byte "ERR AID"
 log
 err
-validateasapaymentafter_29_l4:
+validateasapaymentafter_28_l4:
 byte "ERR PAY"
 log
 err
-validateasapaymentafter_29_l5:
+validateasapaymentafter_28_l5:
 byte "ERR PAY"
 log
 err
-validateasapaymentafter_29_l6:
+validateasapaymentafter_28_l6:
 txn GroupIndex
 frame_dig -2
 +
@@ -1889,7 +1833,7 @@ gtxns AssetAmount
 retsub
 
 // validate_asa_payment_before
-validateasapaymentbefore_30:
+validateasapaymentbefore_29:
 proto 2 1
 txn GroupIndex
 frame_dig -2
@@ -1898,7 +1842,7 @@ gtxns TypeEnum
 int axfer
 ==
 !
-bnz validateasapaymentbefore_30_l5
+bnz validateasapaymentbefore_29_l5
 txn GroupIndex
 frame_dig -2
 -
@@ -1906,7 +1850,7 @@ gtxns AssetReceiver
 global CurrentApplicationAddress
 ==
 !
-bnz validateasapaymentbefore_30_l4
+bnz validateasapaymentbefore_29_l4
 txn GroupIndex
 frame_dig -2
 -
@@ -1914,19 +1858,19 @@ gtxns XferAsset
 frame_dig -1
 ==
 !
-bz validateasapaymentbefore_30_l6
+bz validateasapaymentbefore_29_l6
 byte "ERR AID"
 log
 err
-validateasapaymentbefore_30_l4:
+validateasapaymentbefore_29_l4:
 byte "ERR PAY"
 log
 err
-validateasapaymentbefore_30_l5:
+validateasapaymentbefore_29_l5:
 byte "ERR PAY"
 log
 err
-validateasapaymentbefore_30_l6:
+validateasapaymentbefore_29_l6:
 txn GroupIndex
 frame_dig -2
 -
@@ -1934,7 +1878,7 @@ gtxns AssetAmount
 retsub
 
 // validate_algo_payment_after
-validatealgopaymentafter_31:
+validatealgopaymentafter_30:
 proto 1 1
 txn GroupIndex
 frame_dig -1
@@ -1943,7 +1887,7 @@ gtxns TypeEnum
 int pay
 ==
 !
-bnz validatealgopaymentafter_31_l5
+bnz validatealgopaymentafter_30_l5
 txn GroupIndex
 frame_dig -1
 +
@@ -1951,7 +1895,7 @@ gtxns Receiver
 global CurrentApplicationAddress
 ==
 !
-bnz validatealgopaymentafter_31_l4
+bnz validatealgopaymentafter_30_l4
 txn GroupIndex
 frame_dig -1
 +
@@ -1959,19 +1903,19 @@ gtxns Amount
 int 1000000
 >=
 !
-bz validatealgopaymentafter_31_l6
+bz validatealgopaymentafter_30_l6
 byte "ERR MIN AMT"
 log
 err
-validatealgopaymentafter_31_l4:
+validatealgopaymentafter_30_l4:
 byte "ERR PAY"
 log
 err
-validatealgopaymentafter_31_l5:
+validatealgopaymentafter_30_l5:
 byte "ERR PAY"
 log
 err
-validatealgopaymentafter_31_l6:
+validatealgopaymentafter_30_l6:
 txn GroupIndex
 frame_dig -1
 +
@@ -1979,37 +1923,37 @@ gtxns Amount
 retsub
 
 // keyreg_online
-keyregonline_32:
+keyregonline_31:
 proto 7 0
 callsub assertfeeadminornoderunner_7
 global CurrentApplicationAddress
 acct_params_get AcctIncentiveEligible
-store 31
-store 30
+store 27
+store 26
 frame_dig -1
 int 0
 >
-bnz keyregonline_32_l7
-keyregonline_32_l1:
-load 30
+bnz keyregonline_31_l7
+keyregonline_31_l1:
+load 26
 int 1
 ==
-bnz keyregonline_32_l5
+bnz keyregonline_31_l5
 frame_dig -1
 global PayoutsGoOnlineFee
 ==
 !
-bnz keyregonline_32_l4
+bnz keyregonline_31_l4
 byte 0x652cb004
 byte 0x01
 concat
 log
-b keyregonline_32_l9
-keyregonline_32_l4:
+b keyregonline_31_l9
+keyregonline_31_l4:
 byte "ERR !IE"
 log
 err
-keyregonline_32_l5:
+keyregonline_31_l5:
 byte 0x652cb004
 byte 0x00
 concat
@@ -2018,21 +1962,21 @@ frame_dig -1
 int 0
 ==
 !
-bz keyregonline_32_l9
+bz keyregonline_31_l9
 byte "ERR IE"
 log
 err
-keyregonline_32_l7:
+keyregonline_31_l7:
 int 1
-callsub validatealgopaymentafter_31
+callsub validatealgopaymentafter_30
 frame_dig -1
 ==
 !
-bz keyregonline_32_l1
+bz keyregonline_31_l1
 byte "ERR PAY AMT"
 log
 err
-keyregonline_32_l9:
+keyregonline_31_l9:
 itxn_begin
 int keyreg
 itxn_field TypeEnum
@@ -2057,7 +2001,7 @@ itxn_submit
 retsub
 
 // keyreg_offline
-keyregoffline_33:
+keyregoffline_32:
 proto 0 0
 callsub assertfeeadminornoderunner_7
 byte 0x2c9dace6
@@ -2071,7 +2015,7 @@ itxn_submit
 retsub
 
 // arc59_send_asa_and_algo
-arc59sendasaandalgo_34:
+arc59sendasaandalgo_33:
 proto 4 0
 byte ""
 int 0
@@ -2079,7 +2023,7 @@ dupn 2
 byte ""
 global CurrentApplicationAddress
 balance
-store 47
+store 43
 itxn_begin
 int appl
 itxn_field TypeEnum
@@ -2115,21 +2059,21 @@ frame_bury 3
 byte "arc59_app_id"
 app_global_get
 app_params_get AppAddress
-store 46
-store 45
+store 42
+store 41
 frame_dig 2
 int 0
 >
-bnz arc59sendasaandalgo_34_l9
-arc59sendasaandalgo_34_l1:
+bnz arc59sendasaandalgo_33_l9
+arc59sendasaandalgo_33_l1:
 frame_dig 3
 !
-bnz arc59sendasaandalgo_34_l8
-arc59sendasaandalgo_34_l2:
+bnz arc59sendasaandalgo_33_l8
+arc59sendasaandalgo_33_l2:
 frame_dig 1
 int 5
 >=
-bnz arc59sendasaandalgo_34_l7
+bnz arc59sendasaandalgo_33_l7
 itxn_begin
 int appl
 itxn_field TypeEnum
@@ -2147,11 +2091,11 @@ itxn LastLog
 len
 substring3
 frame_bury 4
-arc59sendasaandalgo_34_l4:
+arc59sendasaandalgo_33_l4:
 itxn_begin
 int axfer
 itxn_field TypeEnum
-load 45
+load 41
 itxn_field AssetReceiver
 frame_dig -2
 itxn_field XferAsset
@@ -2175,20 +2119,20 @@ itxn_field ApplicationArgs
 frame_dig 4
 frame_dig -2
 asset_holding_get AssetBalance
-store 49
-store 48
-load 49
-bnz arc59sendasaandalgo_34_l6
+store 45
+store 44
+load 45
+bnz arc59sendasaandalgo_33_l6
 int 4
 global MinTxnFee
 *
-b arc59sendasaandalgo_34_l10
-arc59sendasaandalgo_34_l6:
+b arc59sendasaandalgo_33_l10
+arc59sendasaandalgo_33_l6:
 int 2
 global MinTxnFee
 *
-b arc59sendasaandalgo_34_l10
-arc59sendasaandalgo_34_l7:
+b arc59sendasaandalgo_33_l10
+arc59sendasaandalgo_33_l7:
 itxn_begin
 int appl
 itxn_field TypeEnum
@@ -2214,8 +2158,8 @@ frame_dig 4
 global MinBalance
 global MinTxnFee
 callsub sendalgo_2
-b arc59sendasaandalgo_34_l4
-arc59sendasaandalgo_34_l8:
+b arc59sendasaandalgo_33_l4
+arc59sendasaandalgo_33_l8:
 itxn_begin
 int appl
 itxn_field TypeEnum
@@ -2232,24 +2176,24 @@ global MinTxnFee
 *
 itxn_field Fee
 itxn_submit
-b arc59sendasaandalgo_34_l2
-arc59sendasaandalgo_34_l9:
-load 45
+b arc59sendasaandalgo_33_l2
+arc59sendasaandalgo_33_l9:
+load 41
 frame_dig 2
 global MinTxnFee
 callsub sendalgo_2
-b arc59sendasaandalgo_34_l1
-arc59sendasaandalgo_34_l10:
+b arc59sendasaandalgo_33_l1
+arc59sendasaandalgo_33_l10:
 itxn_field Fee
 itxn_submit
-load 47
+load 43
 global CurrentApplicationAddress
 balance
 -
-store 47
+store 43
 frame_dig -4
 frame_dig -3
-load 47
+load 43
 -
 global MinTxnFee
 -
@@ -2258,30 +2202,30 @@ callsub sendalgo_2
 retsub
 
 // protest_stake
-proteststake_35:
+proteststake_34:
 proto 0 0
 byte "contract_upgrade"
 app_global_get
 byte ""
 !=
 !
-bnz proteststake_35_l6
+bnz proteststake_34_l6
 int 1
 byte "lst_id"
 app_global_get
-callsub validateasapaymentbefore_30
-store 32
-load 32
+callsub validateasapaymentbefore_29
+store 28
+load 28
 int 1000000
 >=
 !
-bnz proteststake_35_l5
+bnz proteststake_34_l5
 txn Sender
 box_len
-store 34
-store 33
-load 34
-bnz proteststake_35_l4
+store 30
+store 29
+load 30
+bnz proteststake_34_l4
 byte "protest_cnt"
 int 1
 byte "protest_cnt"
@@ -2289,35 +2233,35 @@ app_global_get
 +
 app_global_put
 txn Sender
-load 32
+load 28
 itob
 box_put
-b proteststake_35_l7
-proteststake_35_l4:
+b proteststake_34_l7
+proteststake_34_l4:
 txn Sender
 txn Sender
-callsub getuserprotestingstake_42
-load 32
+callsub getuserprotestingstake_41
+load 28
 +
 itob
 box_put
-b proteststake_35_l7
-proteststake_35_l5:
+b proteststake_34_l7
+proteststake_34_l5:
 byte "ERR MIN PRTST"
 log
 err
-proteststake_35_l6:
+proteststake_34_l6:
 byte "ERR NO UPG"
 log
 err
-proteststake_35_l7:
+proteststake_34_l7:
 byte 0xbccaa98f
-load 32
+load 28
 itob
 concat
 log
 byte "protest_sum"
-load 32
+load 28
 byte "protest_sum"
 app_global_get
 +
@@ -2325,15 +2269,15 @@ app_global_put
 retsub
 
 // unprotest_stake
-unproteststake_36:
+unproteststake_35:
 proto 0 0
 txn Sender
 int 1
-callsub internalunproteststake_39
+callsub internalunproteststake_38
 retsub
 
 // admin_unprotest_stake
-adminunproteststake_37:
+adminunproteststake_36:
 proto 1 0
 callsub assertfeeadmin_5
 byte "contract_upgrade"
@@ -2341,18 +2285,18 @@ app_global_get
 byte ""
 ==
 !
-bz adminunproteststake_37_l2
+bz adminunproteststake_36_l2
 byte "ERR UPG"
 log
 err
-adminunproteststake_37_l2:
+adminunproteststake_36_l2:
 frame_dig -1
 int 0
-callsub internalunproteststake_39
+callsub internalunproteststake_38
 retsub
 
 // dissolve_protesting_stake
-dissolveprotestingstake_38:
+dissolveprotestingstake_37:
 proto 1 0
 callsub assertfeeadmin_5
 callsub premintorredeem_13
@@ -2364,55 +2308,55 @@ extract_uint32
 global LatestTimestamp
 <
 !
-bz dissolveprotestingstake_38_l2
+bz dissolveprotestingstake_37_l2
 byte "ERR EARLY"
 log
 err
-dissolveprotestingstake_38_l2:
+dissolveprotestingstake_37_l2:
 frame_dig -1
-callsub getuserprotestingstake_42
-store 38
+callsub getuserprotestingstake_41
+store 34
 frame_dig -1
-load 38
+load 34
 global MinTxnFee
-callsub internalredeem_41
+callsub internalredeem_40
 frame_dig -1
-load 38
-callsub internalunprotestadjuststate_40
+load 34
+callsub internalunprotestadjuststate_39
 retsub
 
 // internal_unprotest_stake
-internalunproteststake_39:
+internalunproteststake_38:
 proto 2 0
 frame_dig -2
-callsub getuserprotestingstake_42
-store 37
+callsub getuserprotestingstake_41
+store 33
 frame_dig -2
 byte "lst_id"
 app_global_get
-load 37
+load 33
 int 0
 callsub sendasa_3
 frame_dig -2
-load 37
-callsub internalunprotestadjuststate_40
+load 33
+callsub internalunprotestadjuststate_39
 byte 0x02da2e96
-load 37
+load 33
 itob
 concat
 frame_dig -1
-bnz internalunproteststake_39_l2
+bnz internalunproteststake_38_l2
 byte 0x00
-b internalunproteststake_39_l3
-internalunproteststake_39_l2:
+b internalunproteststake_38_l3
+internalunproteststake_38_l2:
 byte 0x01
-internalunproteststake_39_l3:
+internalunproteststake_38_l3:
 concat
 log
 retsub
 
 // internal_unprotest_adjust_state
-internalunprotestadjuststate_40:
+internalunprotestadjuststate_39:
 proto 2 0
 byte "protest_cnt"
 byte "protest_cnt"
@@ -2429,36 +2373,36 @@ app_global_put
 frame_dig -2
 box_del
 !
-bz internalunprotestadjuststate_40_l2
+bz internalunprotestadjuststate_39_l2
 byte "ERR BOX DEL"
 log
 err
-internalunprotestadjuststate_40_l2:
+internalunprotestadjuststate_39_l2:
 retsub
 
 // internal_redeem
-internalredeem_41:
+internalredeem_40:
 proto 3 0
 frame_dig -2
 !
-bnz internalredeem_41_l13
+bnz internalredeem_40_l13
 load 255
 int 255255255
 ==
 !
-bnz internalredeem_41_l12
+bnz internalredeem_40_l12
 byte "staked"
 app_global_get
 int 0
 ==
-bnz internalredeem_41_l11
+bnz internalredeem_40_l11
 byte "rate_precision"
 app_global_get
 global CurrentApplicationAddress
 byte "asa_id"
 app_global_get
 asset_holding_get AssetBalance
-store 41
+store 37
 mulw
 int 0
 byte "staked"
@@ -2469,29 +2413,29 @@ pop
 swap
 !
 assert
-internalredeem_41_l4:
-store 39
+internalredeem_40_l4:
+store 35
 byte 0x8a4dafe7
-load 39
+load 35
 itob
 concat
 log
-load 39
+load 35
 int 0
 >
-bnz internalredeem_41_l6
+bnz internalredeem_40_l6
 int 0
-store 40
+store 36
 frame_dig -3
 frame_dig -2
 frame_dig -1
 -
 frame_dig -1
 callsub sendalgo_2
-b internalredeem_41_l14
-internalredeem_41_l6:
+b internalredeem_40_l14
+internalredeem_40_l6:
 frame_dig -2
-load 39
+load 35
 mulw
 int 0
 byte "rate_precision"
@@ -2502,36 +2446,36 @@ pop
 swap
 !
 assert
-store 40
+store 36
 frame_dig -3
 byte "asa_id"
 app_global_get
 asset_holding_get AssetBalance
-store 43
-store 42
-load 43
-bnz internalredeem_41_l10
+store 39
+store 38
+load 39
+bnz internalredeem_40_l10
 frame_dig -1
 int 0
 >
 !
-bnz internalredeem_41_l9
+bnz internalredeem_40_l9
 frame_dig -3
 frame_dig -2
 byte "asa_id"
 app_global_get
-load 40
-callsub arc59sendasaandalgo_34
-b internalredeem_41_l14
-internalredeem_41_l9:
+load 36
+callsub arc59sendasaandalgo_33
+b internalredeem_40_l14
+internalredeem_40_l9:
 byte "ERR FEES"
 log
 err
-internalredeem_41_l10:
+internalredeem_40_l10:
 frame_dig -3
 byte "asa_id"
 app_global_get
-load 40
+load 36
 frame_dig -1
 callsub sendasa_3
 frame_dig -3
@@ -2542,24 +2486,24 @@ frame_dig -1
 -
 frame_dig -1
 callsub sendalgo_2
-b internalredeem_41_l14
-internalredeem_41_l11:
+b internalredeem_40_l14
+internalredeem_40_l11:
 int 0
-b internalredeem_41_l4
-internalredeem_41_l12:
+b internalredeem_40_l4
+internalredeem_40_l12:
 byte "ERR NP"
 log
 err
-internalredeem_41_l13:
+internalredeem_40_l13:
 byte "ERR ZERO"
 log
 err
-internalredeem_41_l14:
+internalredeem_40_l14:
 byte 0x623647b0
 frame_dig -2
 itob
 concat
-load 40
+load 36
 itob
 concat
 log
@@ -2568,7 +2512,7 @@ global CurrentApplicationAddress
 byte "asa_id"
 app_global_get
 asset_holding_get AssetBalance
-store 44
+store 40
 itob
 concat
 log
@@ -2581,25 +2525,25 @@ app_global_put
 retsub
 
 // get_user_protesting_stake
-getuserprotestingstake_42:
+getuserprotestingstake_41:
 proto 1 1
 frame_dig -1
 box_get
-store 36
-store 35
-load 36
+store 32
+store 31
+load 32
 !
-bz getuserprotestingstake_42_l2
+bz getuserprotestingstake_41_l2
 byte "ERR NO PRTST"
 log
 err
-getuserprotestingstake_42_l2:
-load 35
+getuserprotestingstake_41_l2:
+load 31
 btoi
 retsub
 
 // queue_upgrade
-queueupgrade_43:
+queueupgrade_42:
 proto 1 0
 callsub assertadmin_4
 frame_dig -1
@@ -2610,11 +2554,11 @@ int 32
 int 0
 ==
 !
-bz queueupgrade_43_l2
+bz queueupgrade_42_l2
 byte "ERR HASH LEN"
 log
 err
-queueupgrade_43_l2:
+queueupgrade_42_l2:
 byte "contract_upgrade"
 global LatestTimestamp
 byte "upgrade_period"
@@ -2629,7 +2573,7 @@ app_global_put
 retsub
 
 // reset_upgrade
-resetupgrade_44:
+resetupgrade_43:
 proto 0 0
 callsub assertadminorfeeadmin_6
 byte "contract_upgrade"
@@ -2637,56 +2581,56 @@ app_global_get
 byte ""
 !=
 !
-bz resetupgrade_44_l2
+bz resetupgrade_43_l2
 byte "ERR NO C UPGR"
 log
 err
-resetupgrade_44_l2:
+resetupgrade_43_l2:
 byte "contract_upgrade"
 byte ""
 app_global_put
 retsub
 
 // mint
-mint_45:
+mint_44:
 proto 0 0
 byte "lst_id"
 app_global_get
 int 0
 !=
 !
-bnz mint_45_l12
+bnz mint_44_l12
 callsub premintorredeem_13
 pop
 int 1
-callsub validatealgopaymentafter_31
-store 50
+callsub validatealgopaymentafter_30
+store 46
 global CurrentApplicationAddress
 balance
-load 50
+load 46
 +
 byte "max_balance"
 app_global_get
 <=
 !
-bnz mint_45_l11
+bnz mint_44_l11
 load 255
 int 255255255
 ==
 !
-bnz mint_45_l10
+bnz mint_44_l10
 byte "staked"
 app_global_get
 int 0
 ==
-bnz mint_45_l9
+bnz mint_44_l9
 byte "rate_precision"
 app_global_get
 global CurrentApplicationAddress
 byte "asa_id"
 app_global_get
 asset_holding_get AssetBalance
-store 54
+store 50
 mulw
 int 0
 byte "staked"
@@ -2697,25 +2641,25 @@ pop
 swap
 !
 assert
-mint_45_l5:
-store 51
+mint_44_l5:
+store 47
 byte 0x8a4dafe7
-load 51
+load 47
 itob
 concat
 log
-load 51
+load 47
 int 0
 >
-bnz mint_45_l7
+bnz mint_44_l7
 int 0
-store 53
+store 49
 int 0
-store 52
-b mint_45_l13
-mint_45_l7:
-load 50
-load 51
+store 48
+b mint_44_l13
+mint_44_l7:
+load 46
+load 47
 mulw
 int 0
 byte "rate_precision"
@@ -2726,46 +2670,44 @@ pop
 swap
 !
 assert
-int 1
-+
-store 52
+store 48
 int 2
 byte "asa_id"
 app_global_get
-callsub validateasapaymentafter_29
-store 53
-load 52
-load 53
+callsub validateasapaymentafter_28
+store 49
+load 48
+load 49
 <=
 !
-bz mint_45_l13
+bz mint_44_l13
 byte "ERR RATE"
 log
 err
-mint_45_l9:
+mint_44_l9:
 int 0
-b mint_45_l5
-mint_45_l10:
+b mint_44_l5
+mint_44_l10:
 byte "ERR NP"
 log
 err
-mint_45_l11:
+mint_44_l11:
 byte "ERR MAX"
 log
 err
-mint_45_l12:
+mint_44_l12:
 byte "ERR !RDY"
 log
 err
-mint_45_l13:
+mint_44_l13:
 byte 0x5d77c203
-load 50
+load 46
 itob
 concat
-load 52
+load 48
 itob
 concat
-load 53
+load 49
 itob
 concat
 log
@@ -2774,14 +2716,14 @@ global CurrentApplicationAddress
 byte "asa_id"
 app_global_get
 asset_holding_get AssetBalance
-store 55
-load 53
+store 51
+load 49
 +
 itob
 concat
 log
 byte "staked"
-load 50
+load 46
 byte "staked"
 app_global_get
 +
@@ -2789,37 +2731,37 @@ app_global_put
 txn Sender
 byte "lst_id"
 app_global_get
-load 50
+load 46
 int 0
 callsub sendasa_3
 retsub
 
 // redeem
-redeem_46:
+redeem_45:
 proto 0 0
 byte "lst_id"
 app_global_get
 int 0
 !=
 !
-bz redeem_46_l2
+bz redeem_45_l2
 byte "ERR !RDY"
 log
 err
-redeem_46_l2:
+redeem_45_l2:
 callsub premintorredeem_13
 pop
 txn Sender
 int 1
 byte "lst_id"
 app_global_get
-callsub validateasapaymentbefore_30
+callsub validateasapaymentbefore_29
 int 0
-callsub internalredeem_41
+callsub internalredeem_40
 retsub
 
 // get_rate
-getrate_47:
+getrate_46:
 proto 0 1
 int 0
 byte "lst_id"
@@ -2827,26 +2769,26 @@ app_global_get
 int 0
 !=
 !
-bnz getrate_47_l6
+bnz getrate_46_l6
 callsub premintorredeem_13
 pop
 load 255
 int 255255255
 ==
 !
-bnz getrate_47_l5
+bnz getrate_46_l5
 byte "staked"
 app_global_get
 int 0
 ==
-bnz getrate_47_l4
+bnz getrate_46_l4
 byte "rate_precision"
 app_global_get
 global CurrentApplicationAddress
 byte "asa_id"
 app_global_get
 asset_holding_get AssetBalance
-store 56
+store 52
 mulw
 int 0
 byte "staked"
@@ -2857,24 +2799,24 @@ pop
 swap
 !
 assert
-b getrate_47_l7
-getrate_47_l4:
+b getrate_46_l7
+getrate_46_l4:
 int 0
-b getrate_47_l7
-getrate_47_l5:
+b getrate_46_l7
+getrate_46_l5:
 byte "ERR NP"
 log
 err
-getrate_47_l6:
+getrate_46_l6:
 byte "ERR !RDY"
 log
 err
-getrate_47_l7:
+getrate_46_l7:
 frame_bury 0
 retsub
 
 // get_contract_listing
-getcontractlisting_48:
+getcontractlisting_47:
 proto 1 1
 byte ""
 int 0
@@ -2892,35 +2834,35 @@ app_global_get
 int 0
 !=
 !
-bnz getcontractlisting_48_l9
+bnz getcontractlisting_47_l9
 byte "lst_id"
 app_global_get
 asset_params_get AssetName
+store 54
+store 53
+byte "asa_id"
+app_global_get
+asset_params_get AssetName
+store 56
+store 55
+byte "asa_id"
+app_global_get
+asset_params_get AssetUnitName
 store 58
 store 57
 byte "asa_id"
 app_global_get
-asset_params_get AssetName
+asset_params_get AssetDecimals
 store 60
 store 59
-byte "asa_id"
-app_global_get
-asset_params_get AssetUnitName
-store 62
-store 61
-byte "asa_id"
-app_global_get
-asset_params_get AssetDecimals
-store 64
-store 63
 global CurrentApplicationAddress
 acct_params_get AcctIncentiveEligible
-store 66
-store 65
+store 62
+store 61
 global CurrentApplicationAddress
 voter_params_get VoterIncentiveEligible
-store 68
-store 67
+store 64
+store 63
 global CurrentApplicationAddress
 balance
 frame_bury 2
@@ -2928,7 +2870,7 @@ global CurrentApplicationAddress
 byte "asa_id"
 app_global_get
 asset_holding_get AssetBalance
-store 69
+store 65
 frame_bury 3
 byte "staked"
 app_global_get
@@ -2936,7 +2878,7 @@ frame_bury 4
 byte "lst_id"
 app_global_get
 frame_bury 5
-load 57
+load 53
 frame_bury 6
 frame_dig 6
 len
@@ -2948,25 +2890,25 @@ frame_bury 6
 byte "asa_id"
 app_global_get
 frame_bury 7
+load 55
+frame_bury 8
+frame_dig 8
+len
+itob
+extract 6 0
+frame_dig 8
+concat
+frame_bury 8
+load 57
+frame_bury 9
+frame_dig 9
+len
+itob
+extract 6 0
+frame_dig 9
+concat
+frame_bury 9
 load 59
-frame_bury 8
-frame_dig 8
-len
-itob
-extract 6 0
-frame_dig 8
-concat
-frame_bury 8
-load 61
-frame_bury 9
-frame_dig 9
-len
-itob
-extract 6 0
-frame_dig 9
-concat
-frame_bury 9
-load 63
 frame_bury 10
 frame_dig 10
 int 65536
@@ -2980,19 +2922,19 @@ load 255
 int 255255255
 ==
 !
-bnz getcontractlisting_48_l8
+bnz getcontractlisting_47_l8
 byte "staked"
 app_global_get
 int 0
 ==
-bnz getcontractlisting_48_l7
+bnz getcontractlisting_47_l7
 byte "rate_precision"
 app_global_get
 global CurrentApplicationAddress
 byte "asa_id"
 app_global_get
 asset_holding_get AssetBalance
-store 70
+store 66
 mulw
 int 0
 byte "staked"
@@ -3003,13 +2945,13 @@ pop
 swap
 !
 assert
-getcontractlisting_48_l4:
+getcontractlisting_47_l4:
 frame_bury 1
-load 65
+load 61
 !
 !
 frame_bury 12
-load 68
+load 64
 !
 !
 frame_bury 13
@@ -3022,28 +2964,28 @@ byte ""
 frame_bury 14
 frame_dig -1
 box_len
-store 72
-store 71
-load 72
-bnz getcontractlisting_48_l6
+store 68
+store 67
+load 68
+bnz getcontractlisting_47_l6
 int 0
-b getcontractlisting_48_l10
-getcontractlisting_48_l6:
+b getcontractlisting_47_l10
+getcontractlisting_47_l6:
 frame_dig -1
-callsub getuserprotestingstake_42
-b getcontractlisting_48_l10
-getcontractlisting_48_l7:
+callsub getuserprotestingstake_41
+b getcontractlisting_47_l10
+getcontractlisting_47_l7:
 int 0
-b getcontractlisting_48_l4
-getcontractlisting_48_l8:
+b getcontractlisting_47_l4
+getcontractlisting_47_l8:
 byte "ERR NP"
 log
 err
-getcontractlisting_48_l9:
+getcontractlisting_47_l9:
 byte "ERR !RDY"
 log
 err
-getcontractlisting_48_l10:
+getcontractlisting_47_l10:
 frame_bury 15
 frame_dig 1
 itob
@@ -3141,7 +3083,7 @@ frame_bury 0
 retsub
 
 // get_rate_and_balances
-getrateandbalances_49:
+getrateandbalances_48:
 proto 0 1
 byte ""
 int 0
@@ -3153,26 +3095,26 @@ app_global_get
 int 0
 !=
 !
-bnz getrateandbalances_49_l6
+bnz getrateandbalances_48_l6
 callsub premintorredeem_13
 pop
 load 255
 int 255255255
 ==
 !
-bnz getrateandbalances_49_l5
+bnz getrateandbalances_48_l5
 byte "staked"
 app_global_get
 int 0
 ==
-bnz getrateandbalances_49_l4
+bnz getrateandbalances_48_l4
 byte "rate_precision"
 app_global_get
 global CurrentApplicationAddress
 byte "asa_id"
 app_global_get
 asset_holding_get AssetBalance
-store 73
+store 69
 mulw
 int 0
 byte "staked"
@@ -3183,19 +3125,19 @@ pop
 swap
 !
 assert
-b getrateandbalances_49_l7
-getrateandbalances_49_l4:
+b getrateandbalances_48_l7
+getrateandbalances_48_l4:
 int 0
-b getrateandbalances_49_l7
-getrateandbalances_49_l5:
+b getrateandbalances_48_l7
+getrateandbalances_48_l5:
 byte "ERR NP"
 log
 err
-getrateandbalances_49_l6:
+getrateandbalances_48_l6:
 byte "ERR !RDY"
 log
 err
-getrateandbalances_49_l7:
+getrateandbalances_48_l7:
 frame_bury 1
 global CurrentApplicationAddress
 balance
@@ -3204,7 +3146,7 @@ global CurrentApplicationAddress
 byte "asa_id"
 app_global_get
 asset_holding_get AssetBalance
-store 74
+store 70
 frame_bury 3
 frame_dig 1
 itob
@@ -3218,7 +3160,7 @@ frame_bury 0
 retsub
 
 // get_need_swap
-getneedswap_50:
+getneedswap_49:
 proto 0 1
 int 0
 byte "lst_id"
@@ -3226,11 +3168,11 @@ app_global_get
 int 0
 !=
 !
-bz getneedswap_50_l2
+bz getneedswap_49_l2
 byte "ERR !RDY"
 log
 err
-getneedswap_50_l2:
+getneedswap_49_l2:
 byte "delay_optin"
 app_global_get
 int 0
@@ -3257,14 +3199,14 @@ frame_bury 0
 retsub
 
 // swap_or_fail
-swaporfail_51:
+swaporfail_50:
 proto 0 0
 byte "lst_id"
 app_global_get
 int 0
 !=
 !
-bnz swaporfail_51_l5
+bnz swaporfail_50_l5
 callsub maybeapplyfeeupdate_9
 callsub maybeoptin_15
 byte "delay_optin"
@@ -3288,32 +3230,32 @@ int 1000
 >
 &&
 !
-bnz swaporfail_51_l4
+bnz swaporfail_50_l4
 callsub swap_14
 !
-bz swaporfail_51_l6
+bz swaporfail_50_l6
 byte "ERR SWP"
 log
 err
-swaporfail_51_l4:
+swaporfail_50_l4:
 byte "ERR NO SWP"
 log
 err
-swaporfail_51_l5:
+swaporfail_50_l5:
 byte "ERR !RDY"
 log
 err
-swaporfail_51_l6:
+swaporfail_50_l6:
 retsub
 
 // nullun
-nullun_52:
+nullun_51:
 proto 0 0
 int 1
 return
 
 // queue_update_fees_caster
-queueupdatefeescaster_53:
+queueupdatefeescaster_52:
 proto 0 0
 int 0
 dupn 2
@@ -3335,13 +3277,13 @@ log
 retsub
 
 // reset_update_fees_caster
-resetupdatefeescaster_54:
+resetupdatefeescaster_53:
 proto 0 0
 callsub resetupdatefees_12
 retsub
 
 // configure_caster
-configurecaster_55:
+configurecaster_54:
 proto 0 0
 int 0
 byte ""
@@ -3423,7 +3365,7 @@ callsub configure_18
 retsub
 
 // configure2_caster
-configure2caster_56:
+configure2caster_55:
 proto 0 0
 byte ""
 dupn 2
@@ -3440,7 +3382,7 @@ callsub configure2_19
 retsub
 
 // change_admin_1_caster
-changeadmin1caster_57:
+changeadmin1caster_56:
 proto 0 0
 byte ""
 txna ApplicationArgs 1
@@ -3450,13 +3392,13 @@ callsub changeadmin1_20
 retsub
 
 // change_admin_2_caster
-changeadmin2caster_58:
+changeadmin2caster_57:
 proto 0 0
 callsub changeadmin2_21
 retsub
 
 // change_noderunner_caster
-changenoderunnercaster_59:
+changenoderunnercaster_58:
 proto 0 0
 byte ""
 txna ApplicationArgs 1
@@ -3466,7 +3408,7 @@ callsub changenoderunner_22
 retsub
 
 // change_feeaddr_caster
-changefeeaddrcaster_60:
+changefeeaddrcaster_59:
 proto 0 0
 byte ""
 txna ApplicationArgs 1
@@ -3476,7 +3418,7 @@ callsub changefeeaddr_23
 retsub
 
 // update_max_balance_caster
-updatemaxbalancecaster_61:
+updatemaxbalancecaster_60:
 proto 0 0
 int 0
 txna ApplicationArgs 1
@@ -3486,14 +3428,8 @@ frame_dig 0
 callsub updatemaxbalance_24
 retsub
 
-// withdraw_ds_surplus_caster
-withdrawdssurpluscaster_62:
-proto 0 0
-callsub withdrawdssurplus_25
-retsub
-
 // verify_nfdomains_caster
-verifynfdomainscaster_63:
+verifynfdomainscaster_61:
 proto 0 0
 int 0
 dup
@@ -3509,33 +3445,33 @@ frame_bury 2
 frame_dig 0
 frame_dig 1
 frame_dig 2
-callsub verifynfdomains_26
+callsub verifynfdomains_25
 retsub
 
 // withdraw_node_runner_fees_caster
-withdrawnoderunnerfeescaster_64:
+withdrawnoderunnerfeescaster_62:
 proto 0 0
 int 0
 txna ApplicationArgs 1
 btoi
 frame_bury 0
 frame_dig 0
-callsub withdrawnoderunnerfees_27
+callsub withdrawnoderunnerfees_26
 retsub
 
 // withdraw_platform_fees_caster
-withdrawplatformfeescaster_65:
+withdrawplatformfeescaster_63:
 proto 0 0
 int 0
 txna ApplicationArgs 1
 btoi
 frame_bury 0
 frame_dig 0
-callsub withdrawplatformfees_28
+callsub withdrawplatformfees_27
 retsub
 
 // keyreg_online_caster
-keyregonlinecaster_66:
+keyregonlinecaster_64:
 proto 0 0
 byte ""
 dupn 2
@@ -3566,80 +3502,80 @@ frame_dig 3
 frame_dig 4
 frame_dig 5
 frame_dig 6
-callsub keyregonline_32
+callsub keyregonline_31
 retsub
 
 // keyreg_offline_caster
-keyregofflinecaster_67:
+keyregofflinecaster_65:
 proto 0 0
-callsub keyregoffline_33
+callsub keyregoffline_32
 retsub
 
 // protest_stake_caster
-proteststakecaster_68:
+proteststakecaster_66:
 proto 0 0
-callsub proteststake_35
+callsub proteststake_34
 retsub
 
 // unprotest_stake_caster
-unproteststakecaster_69:
+unproteststakecaster_67:
 proto 0 0
-callsub unproteststake_36
+callsub unproteststake_35
 retsub
 
 // admin_unprotest_stake_caster
-adminunproteststakecaster_70:
+adminunproteststakecaster_68:
 proto 0 0
 byte ""
 txna ApplicationArgs 1
 frame_bury 0
 frame_dig 0
-callsub adminunproteststake_37
+callsub adminunproteststake_36
 retsub
 
 // dissolve_protesting_stake_caster
-dissolveprotestingstakecaster_71:
+dissolveprotestingstakecaster_69:
 proto 0 0
 byte ""
 txna ApplicationArgs 1
 frame_bury 0
 frame_dig 0
-callsub dissolveprotestingstake_38
+callsub dissolveprotestingstake_37
 retsub
 
 // queue_upgrade_caster
-queueupgradecaster_72:
+queueupgradecaster_70:
 proto 0 0
 byte ""
 txna ApplicationArgs 1
 frame_bury 0
 frame_dig 0
-callsub queueupgrade_43
+callsub queueupgrade_42
 retsub
 
 // reset_upgrade_caster
-resetupgradecaster_73:
+resetupgradecaster_71:
 proto 0 0
-callsub resetupgrade_44
+callsub resetupgrade_43
 retsub
 
 // mint_caster
-mintcaster_74:
+mintcaster_72:
 proto 0 0
-callsub mint_45
+callsub mint_44
 retsub
 
 // redeem_caster
-redeemcaster_75:
+redeemcaster_73:
 proto 0 0
-callsub redeem_46
+callsub redeem_45
 retsub
 
 // get_rate_caster
-getratecaster_76:
+getratecaster_74:
 proto 0 0
 int 0
-callsub getrate_47
+callsub getrate_46
 frame_bury 0
 byte 0x151f7c75
 frame_dig 0
@@ -3649,14 +3585,14 @@ log
 retsub
 
 // get_contract_listing_caster
-getcontractlistingcaster_77:
+getcontractlistingcaster_75:
 proto 0 0
 byte ""
 dup
 txna ApplicationArgs 1
 frame_bury 1
 frame_dig 1
-callsub getcontractlisting_48
+callsub getcontractlisting_47
 frame_bury 0
 byte 0x151f7c75
 frame_dig 0
@@ -3665,10 +3601,10 @@ log
 retsub
 
 // get_rate_and_balances_caster
-getrateandbalancescaster_78:
+getrateandbalancescaster_76:
 proto 0 0
 byte ""
-callsub getrateandbalances_49
+callsub getrateandbalances_48
 frame_bury 0
 byte 0x151f7c75
 frame_dig 0
@@ -3677,10 +3613,10 @@ log
 retsub
 
 // get_need_swap_caster
-getneedswapcaster_79:
+getneedswapcaster_77:
 proto 0 0
 int 0
-callsub getneedswap_50
+callsub getneedswap_49
 frame_bury 0
 byte 0x151f7c75
 byte 0x00
@@ -3692,13 +3628,13 @@ log
 retsub
 
 // swap_or_fail_caster
-swaporfailcaster_80:
+swaporfailcaster_78:
 proto 0 0
-callsub swaporfail_51
+callsub swaporfail_50
 retsub
 
 // nullun_caster
-nulluncaster_81:
+nulluncaster_79:
 proto 0 0
-callsub nullun_52
+callsub nullun_51
 retsub

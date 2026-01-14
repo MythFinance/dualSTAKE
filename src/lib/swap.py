@@ -73,7 +73,9 @@ def swap_tm2_algo_asa(swap_amt):
 
 
 def get_price(tm_account, amount):
-    asset1_id = App.localGetEx(tm_account, gget(str_tm2_app_id), Bytes("asset_1_id"))
+    asset1_id = App.localGetEx(
+        tm_account, gget(str_tm2_app_id), Bytes("asset_1_id")
+    )
     asset1_reserves = App.localGetEx(
         tm_account, gget(str_tm2_app_id), Bytes("asset_1_reserves")
     )
